@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.dao.Company_infoMapper" >
+  <resultMap id="BaseResultMap" type="com.demo.entity.Company_info" >
+    <id column="ID" property="ID" jdbcType="VARCHAR" />
+    <result column="NAME" property="NAME" jdbcType="VARCHAR" />
+    <result column="FUNDS" property="FUNDS" jdbcType="VARCHAR" />
+    <result column="TEL" property="TEL" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="ADDRESS" jdbcType="VARCHAR" />
+    <result column="SCALE" property="SCALE" jdbcType="VARCHAR" />
+    <result column="INDUSTRY" property="INDUSTRY" jdbcType="VARCHAR" />
+    <result column="DESCRIPTION" property="DESCRIPTION" jdbcType="VARCHAR" />
+    <result column="ADD_DATE" property="ADD_DATE" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, NAME, FUNDS, TEL, ADDRESS, SCALE, INDUSTRY, DESCRIPTION, ADD_DATE
+  </sql>
+  <insert id="insertSelective" parameterType="com.demo.entity.Company_info" >
+    insert into COMPANY_INFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ID != null" >
+        ID,
+      </if>
+      <if test="NAME != null" >
+        NAME,
+      </if>
+      <if test="FUNDS != null" >
+        FUNDS,
+      </if>
+      <if test="TEL != null" >
+        TEL,
+      </if>
+      <if test="ADDRESS != null" >
+        ADDRESS,
+      </if>
+      <if test="SCALE != null" >
+        SCALE,
+      </if>
+      <if test="INDUSTRY != null" >
+        INDUSTRY,
+      </if>
+      <if test="DESCRIPTION != null" >
+        DESCRIPTION,
+      </if>
+      <if test="ADD_DATE != null" >
+        ADD_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ID != null" >
+        #{ID,jdbcType=VARCHAR},
+      </if>
+      <if test="NAME != null" >
+        #{NAME,jdbcType=VARCHAR},
+      </if>
+      <if test="FUNDS != null" >
+        #{FUNDS,jdbcType=VARCHAR},
+      </if>
+      <if test="TEL != null" >
+        #{TEL,jdbcType=VARCHAR},
+      </if>
+      <if test="ADDRESS != null" >
+        #{ADDRESS,jdbcType=VARCHAR},
+      </if>
+      <if test="SCALE != null" >
+        #{SCALE,jdbcType=VARCHAR},
+      </if>
+      <if test="INDUSTRY != null" >
+        #{INDUSTRY,jdbcType=VARCHAR},
+      </if>
+      <if test="DESCRIPTION != null" >
+        #{DESCRIPTION,jdbcType=VARCHAR},
+      </if>
+      <if test="ADD_DATE != null" >
+        #{ADD_DATE,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.entity.Company_info" >
+    update COMPANY_INFO
+    <set >
+      <if test="NAME != null" >
+        NAME = #{NAME,jdbcType=VARCHAR},
+      </if>
+      <if test="FUNDS != null" >
+        FUNDS = #{FUNDS,jdbcType=VARCHAR},
+      </if>
+      <if test="TEL != null" >
+        TEL = #{TEL,jdbcType=VARCHAR},
+      </if>
+      <if test="ADDRESS != null" >
+        ADDRESS = #{ADDRESS,jdbcType=VARCHAR},
+      </if>
+      <if test="SCALE != null" >
+        SCALE = #{SCALE,jdbcType=VARCHAR},
+      </if>
+      <if test="INDUSTRY != null" >
+        INDUSTRY = #{INDUSTRY,jdbcType=VARCHAR},
+      </if>
+      <if test="DESCRIPTION != null" >
+        DESCRIPTION = #{DESCRIPTION,jdbcType=VARCHAR},
+      </if>
+      <if test="ADD_DATE != null" >
+        ADD_DATE = #{ADD_DATE,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{ID,jdbcType=VARCHAR}
+  </update>
+</mapper>
