@@ -29,6 +29,7 @@
 
     <bean id="mysqlgatewayDataSource" class="com.alibaba.druid.pool.DruidDataSource"
           init-method="init" destroy-method="close">
+        <property name="driverClassName" value="${driverClassName}" />
         <property name="url" value="${mysqlDataSource_url}"/>
         <property name="username" value="${mysqlDataSource_username}"/>
         <property name="password" value="${mysqlDataSource_password}"/>
