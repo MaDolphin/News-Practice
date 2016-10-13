@@ -1,13 +1,13 @@
 package com.demo.dao;
 
-import com.demo.entity.News_info;
+import com.demo.entity.News;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-public interface News_infoMapper {
+public interface NewsMapper {
     @Delete({
         "delete from NEWS_INFO",
         "where ID = #{ID,jdbcType=VARCHAR}"
@@ -22,9 +22,9 @@ public interface News_infoMapper {
         "#{CONTENT,jdbcType=VARCHAR}, #{ADD_DATE,jdbcType=TIMESTAMP}, ",
         "#{USER_ID,jdbcType=VARCHAR}, #{TYPOE,jdbcType=CHAR}, #{PHOTO,jdbcType=VARCHAR})"
     })
-    int insert(News_info record);
+    int insert(News record);
 
-    int insertSelective(News_info record);
+    int insertSelective(News record);
 
     @Select({
         "select",
@@ -33,9 +33,9 @@ public interface News_infoMapper {
         "where ID = #{ID,jdbcType=VARCHAR}"
     })
     @ResultMap("BaseResultMap")
-    News_info selectByPrimaryKey(String ID);
+    News selectByPrimaryKey(String ID);
 
-    int updateByPrimaryKeySelective(News_info record);
+    int updateByPrimaryKeySelective(News record);
 
     @Update({
         "update NEWS_INFO",
@@ -47,5 +47,5 @@ public interface News_infoMapper {
           "PHOTO = #{PHOTO,jdbcType=VARCHAR}",
         "where ID = #{ID,jdbcType=VARCHAR}"
     })
-    int updateByPrimaryKey(News_info record);
+    int updateByPrimaryKey(News record);
 }

@@ -2,7 +2,7 @@ package com.demo.entity;
 
 import java.util.Date;
 
-public class User_info {
+public class User {
     private String id;
 
     private String username;

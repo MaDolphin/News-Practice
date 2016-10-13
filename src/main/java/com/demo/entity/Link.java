@@ -1,6 +1,6 @@
 package com.demo.entity;
 
-public class Link__info {
+public class Link {
     private String ID;
 
     private String NAME;

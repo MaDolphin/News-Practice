@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.demo.dao.Link__infoMapper" >
-  <resultMap id="BaseResultMap" type="com.demo.entity.Link__info" >
+<mapper namespace="com.demo.dao.LinkMapper" >
+  <resultMap id="BaseResultMap" type="com.demo.entity.Link" >
     <id column="ID" property="ID" jdbcType="VARCHAR" />
     <result column="NAME" property="NAME" jdbcType="VARCHAR" />
     <result column="URL" property="URL" jdbcType="VARCHAR" />
@@ -9,8 +9,8 @@
   <sql id="Base_Column_List" >
     ID, NAME, URL
   </sql>
-  <insert id="insertSelective" parameterType="com.demo.entity.Link__info" >
-    insert into LINK__INFO
+  <insert id="insertSelective" parameterType="com.demo.entity.Link" >
+    insert into LINK_INFO
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="ID != null" >
         ID,
@@ -34,8 +34,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.demo.entity.Link__info" >
-    update LINK__INFO
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.entity.Link" >
+    update LINK_INFO
     <set >
       <if test="NAME != null" >
         NAME = #{NAME,jdbcType=VARCHAR},

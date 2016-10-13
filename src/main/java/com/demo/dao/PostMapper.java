@@ -1,13 +1,13 @@
 package com.demo.dao;
 
-import com.demo.entity.Post_info;
+import com.demo.entity.Post;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-public interface Post_infoMapper {
+public interface PostMapper {
     @Delete({
         "delete from POST_INFO",
         "where ID = #{id,jdbcType=VARCHAR}"
@@ -26,9 +26,9 @@ public interface Post_infoMapper {
         "#{salary,jdbcType=VARCHAR}, #{workplace,jdbcType=VARCHAR}, ",
         "#{description,jdbcType=VARCHAR}, #{addDate,jdbcType=CHAR})"
     })
-    int insert(Post_info record);
+    int insert(Post record);
 
-    int insertSelective(Post_info record);
+    int insertSelective(Post record);
 
     @Select({
         "select",
@@ -38,9 +38,9 @@ public interface Post_infoMapper {
         "where ID = #{id,jdbcType=VARCHAR}"
     })
     @ResultMap("BaseResultMap")
-    Post_info selectByPrimaryKey(String id);
+    Post selectByPrimaryKey(String id);
 
-    int updateByPrimaryKeySelective(Post_info record);
+    int updateByPrimaryKeySelective(Post record);
 
     @Update({
         "update POST_INFO",
@@ -55,5 +55,5 @@ public interface Post_infoMapper {
           "ADD_DATE = #{addDate,jdbcType=CHAR}",
         "where ID = #{id,jdbcType=VARCHAR}"
     })
-    int updateByPrimaryKey(Post_info record);
+    int updateByPrimaryKey(Post record);
 }

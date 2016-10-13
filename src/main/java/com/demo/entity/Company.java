@@ -2,7 +2,7 @@ package com.demo.entity;
 
 import java.util.Date;
 
-public class Company_info {
+public class Company {
     private String ID;
 
     private String NAME;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.demo.dao.User_infoMapper" >
-  <resultMap id="BaseResultMap" type="com.demo.entity.User_info" >
+<mapper namespace="com.demo.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.demo.entity.User" >
     <id column="ID" property="id" jdbcType="VARCHAR" />
     <result column="USERNAME" property="username" jdbcType="VARCHAR" />
     <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
@@ -11,7 +11,7 @@
   <sql id="Base_Column_List" >
     ID, USERNAME, PASSWORD, STATUS, ADD_DATE
   </sql>
-  <insert id="insertSelective" parameterType="com.demo.entity.User_info" >
+  <insert id="insertSelective" parameterType="com.demo.entity.User" >
     insert into USER_INFO
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -48,7 +48,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.demo.entity.User_info" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.entity.User" >
     update USER_INFO
     <set >
       <if test="username != null" >

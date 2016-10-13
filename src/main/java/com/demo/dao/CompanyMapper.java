@@ -1,13 +1,13 @@
 package com.demo.dao;
 
-import com.demo.entity.Company_info;
+import com.demo.entity.Company;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-public interface Company_infoMapper {
+public interface CompanyMapper {
     @Delete({
         "delete from COMPANY_INFO",
         "where ID = #{ID,jdbcType=VARCHAR}"
@@ -24,9 +24,9 @@ public interface Company_infoMapper {
         "#{SCALE,jdbcType=VARCHAR}, #{INDUSTRY,jdbcType=VARCHAR}, ",
         "#{DESCRIPTION,jdbcType=VARCHAR}, #{ADD_DATE,jdbcType=TIMESTAMP})"
     })
-    int insert(Company_info record);
+    int insert(Company record);
 
-    int insertSelective(Company_info record);
+    int insertSelective(Company record);
 
     @Select({
         "select",
@@ -35,9 +35,9 @@ public interface Company_infoMapper {
         "where ID = #{ID,jdbcType=VARCHAR}"
     })
     @ResultMap("BaseResultMap")
-    Company_info selectByPrimaryKey(String ID);
+    Company selectByPrimaryKey(String ID);
 
-    int updateByPrimaryKeySelective(Company_info record);
+    int updateByPrimaryKeySelective(Company record);
 
     @Update({
         "update COMPANY_INFO",
@@ -51,5 +51,5 @@ public interface Company_infoMapper {
           "ADD_DATE = #{ADD_DATE,jdbcType=TIMESTAMP}",
         "where ID = #{ID,jdbcType=VARCHAR}"
     })
-    int updateByPrimaryKey(Company_info record);
+    int updateByPrimaryKey(Company record);
 }

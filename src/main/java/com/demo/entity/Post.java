@@ -1,6 +1,6 @@
 package com.demo.entity;
 
-public class Post_info {
+public class Post {
     private String id;
 
     private String companyId;

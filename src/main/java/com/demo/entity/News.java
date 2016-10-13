@@ -2,7 +2,7 @@ package com.demo.entity;
 
 import java.util.Date;
 
-public class News_info {
+public class News {
     private String ID;
 
     private String TITLE;

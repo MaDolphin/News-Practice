@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.demo.dao.Graduate_infoMapper" >
-  <resultMap id="BaseResultMap" type="com.demo.entity.Graduate_info" >
+<mapper namespace="com.demo.dao.GraduateMapper" >
+  <resultMap id="BaseResultMap" type="com.demo.entity.Graduate" >
     <id column="ID" property="id" jdbcType="VARCHAR" />
     <result column="NAME" property="name" jdbcType="VARCHAR" />
     <result column="SEX" property="sex" jdbcType="CHAR" />
@@ -16,7 +16,7 @@
   <sql id="Base_Column_List" >
     ID, NAME, SEX, ADD_DATE, UNIVERSITY, ADDRESS, BIRTHDAY, TEL, DESCRIPTION, PHOTO
   </sql>
-  <insert id="insertSelective" parameterType="com.demo.entity.Graduate_info" >
+  <insert id="insertSelective" parameterType="com.demo.entity.Graduate" >
     insert into GRADUATE_INFO
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -83,7 +83,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.demo.entity.Graduate_info" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.entity.Graduate" >
     update GRADUATE_INFO
     <set >
       <if test="name != null" >

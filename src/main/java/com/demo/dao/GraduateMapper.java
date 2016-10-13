@@ -1,13 +1,13 @@
 package com.demo.dao;
 
-import com.demo.entity.Graduate_info;
+import com.demo.entity.Graduate;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-public interface Graduate_infoMapper {
+public interface GraduateMapper {
     @Delete({
         "delete from GRADUATE_INFO",
         "where ID = #{id,jdbcType=VARCHAR}"
@@ -26,9 +26,9 @@ public interface Graduate_infoMapper {
         "#{tel,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, ",
         "#{photo,jdbcType=VARCHAR})"
     })
-    int insert(Graduate_info record);
+    int insert(Graduate record);
 
-    int insertSelective(Graduate_info record);
+    int insertSelective(Graduate record);
 
     @Select({
         "select",
@@ -37,9 +37,9 @@ public interface Graduate_infoMapper {
         "where ID = #{id,jdbcType=VARCHAR}"
     })
     @ResultMap("BaseResultMap")
-    Graduate_info selectByPrimaryKey(String id);
+    Graduate selectByPrimaryKey(String id);
 
-    int updateByPrimaryKeySelective(Graduate_info record);
+    int updateByPrimaryKeySelective(Graduate record);
 
     @Update({
         "update GRADUATE_INFO",
@@ -54,5 +54,5 @@ public interface Graduate_infoMapper {
           "PHOTO = #{photo,jdbcType=VARCHAR}",
         "where ID = #{id,jdbcType=VARCHAR}"
     })
-    int updateByPrimaryKey(Graduate_info record);
+    int updateByPrimaryKey(Graduate record);
 }

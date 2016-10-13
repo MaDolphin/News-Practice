@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.demo.dao.Post_infoMapper" >
-  <resultMap id="BaseResultMap" type="com.demo.entity.Post_info" >
+<mapper namespace="com.demo.dao.PostMapper" >
+  <resultMap id="BaseResultMap" type="com.demo.entity.Post" >
     <id column="ID" property="id" jdbcType="VARCHAR" />
     <result column="COMPANY_ID" property="companyId" jdbcType="VARCHAR" />
     <result column="NAME" property="name" jdbcType="VARCHAR" />
@@ -17,7 +17,7 @@
     ID, COMPANY_ID, NAME, DEMAND_NUMBER, SEX, EDUCATION, SALARY, WORKPLACE, DESCRIPTION, 
     ADD_DATE
   </sql>
-  <insert id="insertSelective" parameterType="com.demo.entity.Post_info" >
+  <insert id="insertSelective" parameterType="com.demo.entity.Post" >
     insert into POST_INFO
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -84,7 +84,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.demo.entity.Post_info" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.entity.Post" >
     update POST_INFO
     <set >
       <if test="companyId != null" >

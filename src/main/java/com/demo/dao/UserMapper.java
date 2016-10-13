@@ -1,13 +1,13 @@
 package com.demo.dao;
 
-import com.demo.entity.User_info;
+import com.demo.entity.User;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-public interface User_infoMapper {
+public interface UserMapper {
     @Delete({
         "delete from USER_INFO",
         "where ID = #{id,jdbcType=VARCHAR}"
@@ -20,9 +20,9 @@ public interface User_infoMapper {
         "values (#{id,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, ",
         "#{password,jdbcType=VARCHAR}, #{status,jdbcType=CHAR}, #{addDate,jdbcType=TIMESTAMP})"
     })
-    int insert(User_info record);
+    int insert(User record);
 
-    int insertSelective(User_info record);
+    int insertSelective(User record);
 
     @Select({
         "select",
@@ -31,9 +31,9 @@ public interface User_infoMapper {
         "where ID = #{id,jdbcType=VARCHAR}"
     })
     @ResultMap("BaseResultMap")
-    User_info selectByPrimaryKey(String id);
+    User selectByPrimaryKey(String id);
 
-    int updateByPrimaryKeySelective(User_info record);
+    int updateByPrimaryKeySelective(User record);
 
     @Update({
         "update USER_INFO",
@@ -43,5 +43,5 @@ public interface User_infoMapper {
           "ADD_DATE = #{addDate,jdbcType=TIMESTAMP}",
         "where ID = #{id,jdbcType=VARCHAR}"
     })
-    int updateByPrimaryKey(User_info record);
+    int updateByPrimaryKey(User record);
 }
