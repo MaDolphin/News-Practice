@@ -58,7 +58,7 @@ body {
               <tr>
                 <td width="48%">&nbsp;</td>
                 <td width="52%"><table width="82%" border="0" align="left" cellpadding="0" cellspacing="0">
-                    <form name="form1" method="post" action="admin/main.jsp">
+                    <form name="form1" method="post" action="/login">
                       <tr>
                         <td width="21%" height="30"><div align="center"><span class="STYLE3">”√ªß</span></div></td>
                         <td width="79%" height="30"><input name="username" type="text" id="username"  style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;">
@@ -66,7 +66,7 @@ body {
                       </tr>
                       <tr>
                         <td height="30"><div align="center"><span class="STYLE3">√‹¬Î</span></div></td>
-                        <td height="30"><input name="pwd" type="password" id="pwd"  style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;"></td>
+                        <td height="30"><input name="password" type="password" id="pwd"  style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;"></td>
                       </tr>
                       
                       <tr>

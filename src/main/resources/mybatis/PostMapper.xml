@@ -12,6 +12,17 @@
     <result column="WORKPLACE" property="workplace" jdbcType="VARCHAR" />
     <result column="DESCRIPTION" property="description" jdbcType="VARCHAR" />
     <result column="ADD_DATE" property="addDate" jdbcType="CHAR" />
+    <association property="company" javaType="com.demo.entity.Company">
+      <id column="ID" property="ID" jdbcType="VARCHAR" />
+      <result column="NAME" property="NAME" jdbcType="VARCHAR" />
+      <result column="FUNDS" property="FUNDS" jdbcType="VARCHAR" />
+      <result column="TEL" property="TEL" jdbcType="VARCHAR" />
+      <result column="ADDRESS" property="ADDRESS" jdbcType="VARCHAR" />
+      <result column="SCALE" property="SCALE" jdbcType="VARCHAR" />
+      <result column="INDUSTRY" property="INDUSTRY" jdbcType="VARCHAR" />
+      <result column="DESCRIPTION" property="DESCRIPTION" jdbcType="VARCHAR" />
+      <result column="ADD_DATE" property="ADD_DATE" jdbcType="TIMESTAMP" />
+    </association>
   </resultMap>
   <sql id="Base_Column_List" >
     ID, COMPANY_ID, NAME, DEMAND_NUMBER, SEX, EDUCATION, SALARY, WORKPLACE, DESCRIPTION, 
@@ -117,4 +128,18 @@
     </set>
     where ID = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="selectPost" parameterType="com.demo.entity.Post" resultMap="BaseResultMap" >
+    select * from POST_INFO p,COMPANY_INFO com
+    <where>
+      <if test="companyId != null" >
+        p.COMPANY_ID like #{companyId,jdbcType=VARCHAR}
+      </if>
+      <if test="name != null" >
+        and p.NAME like #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="true" >
+        and p.COMPANY_ID like com.ID
+      </if>
+    </where>
+  </select>
 </mapper>

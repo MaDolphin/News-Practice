@@ -33,6 +33,12 @@ public interface UserMapper {
     @ResultMap("BaseResultMap")
     User selectByPrimaryKey(String id);
 
+    @Select({
+          "select * from USER_INFO where username=#{0} and password=#{1}"
+    })
+    @ResultMap("BaseResultMap")
+    User login(String name,String pwd);
+
     int updateByPrimaryKeySelective(User record);
 
     @Update({

@@ -66,14 +66,14 @@ Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>站内新闻管理</DIV>', ''
 insDoc(Class2, gLnk(1, '<a href=xinwentongzhi_list.jsp?lb=站内新闻 target=hsgmain alt=站内新闻查询>站内新闻管理</a>', '', '<%=path %>/images/editinfo.gif'));
 insDoc(Class2, gLnk(1, '<a href=xinwentongzhi_list.jsp?lb=站内新闻 target=hsgmain alt=站内新闻查询>头条新闻管理</a>', '', '<%=path %>/images/editinfo.gif'));
 Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>注册用户管理</DIV>', ''));
-insDoc(Class2, gLnk(1, '<a href=gongsi_list.jsp target=hsgmain alt=公司管理>公司管理</a>', '', '<%=path %>/images/editinfo.gif'));
+insDoc(Class2, gLnk(1, '<a href=gongsi_list target=hsgmain alt=公司管理>公司管理</a>', '', '<%=path %>/images/editinfo.gif'));
 Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>所有岗位管理</DIV>', ''));
-insDoc(Class2, gLnk(1, '<a href=gangwei_list.jsp target=hsgmain alt=所有岗位管理>所有岗位管理</a>', '', '<%=path %>/images/editinfo.gif'));
+insDoc(Class2, gLnk(1, '<a href=gangwei_list target=hsgmain alt=所有岗位管理>所有岗位管理</a>', '', '<%=path %>/images/editinfo.gif'));
 
 
-Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>系统管理</DIV>', ''));
-insDoc(Class2, gLnk(1, '<a href=youqinglianjie_add.jsp target=hsgmain>友情连接管理</a>', '', '<%=path %>/images/editinfo.gif'));
-insDoc(Class2, gLnk(1, '<a href=dx.jsp?lb=留言管理 target=hsgmain>留言管理</a>', '', '<%=path %>/images/editinfo.gif'));
+<%--Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>系统管理</DIV>', ''));--%>
+<%--&lt;%&ndash;insDoc(Class2, gLnk(1, '<a href=youqinglianjie_add.jsp target=hsgmain>友情连接管理</a>', '', '<%=path %>/images/editinfo.gif'));&ndash;%&gt;--%>
+<%--insDoc(Class2, gLnk(1, '<a href=dx.jsp?lb=留言管理 target=hsgmain>留言管理</a>', '', '<%=path %>/images/editinfo.gif'));--%>
 insDoc(foldersTree, gLnk(1, '<a href=mod.jsp target=hsgmain>修改密码</a>', '', '<%=path %>/images/pwd.gif'));
 insDoc(foldersTree, gLnk(1, '退出', '<%=path%>/login.jsp', '<%=path %>/images/exit.gif'));
 initializeDocument(0);</SCRIPT>

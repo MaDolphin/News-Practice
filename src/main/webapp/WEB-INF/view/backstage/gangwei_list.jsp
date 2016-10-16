@@ -1,5 +1,6 @@
 
 <%@ page language="java"  pageEncoding="gb2312"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -24,11 +25,11 @@ rel=stylesheet>
 
   <body >
   <p>已有岗位列表：</p>
-  <form name="form1" id="form1" method="post" action="">
+  <form name="query" id="form1" method="post" action="query">
    搜索:公司:
-     <input name="bianhao" type="text" id="bianhao" />
+     <input name="company" type="text" id="bianhao" />
      岗位名称
-     <input name="mingcheng" type="text" id="mingcheng" />
+     <input name="jobname" type="text" id="mingcheng" />
      <input type="submit" name="Submit" value="查找" />
 	 <input type="button" name="but" value="新增" onclick="add();"/>
 </form>
@@ -44,28 +45,21 @@ rel=stylesheet>
     <td width="138" align="center" bgcolor="CCFFFF">添加时间</td>
     <td width="60" align="center" bgcolor="CCFFFF">操作</td>
   </tr>
+  <c:forEach items="${gangwei}" var="i">
+      <tr>
+          <td width="30" align="center">${i.id}</td>
+          <td><a href=""> ${i.company.NAME}</a></td>
+          <td>${i.name}</td>
+          <td>${i.demandNumber}</td>
+          <td>${i.sex}</td>
+          <td>${i.salary}</td>
+          <td width="138" align="center">${i.addDate}</td>
+          <td width="60" align="center"><a href="gangwei_updt?id=${i.id}">修改</a>|<a href="gangwei_dele?id=${i.id}" onClick="return confirm('真的要删除？')">删除</a></td>
+      </tr>
+  </c:forEach>
+
   
-  <tr>
-    <td width="30" align="center">1</td>
-    <td>北京信雅技术有限公司</td>
-	<td>技术员</td>
-	<td>2人</td>
-	<td>男</td>
-	<td>1500</td>
-    <td width="138" align="center">2012-10-13</td>
-    <td width="60" align="center"><a href="gangwei_updt.jsp?id=1">修改</a>|<a href="del.jsp?id=1&tablename=gangwei" onClick="return confirm('真的要删除？')">删除</a></td>
-  </tr>
-  
-  <tr>
-    <td width="30" align="center">2</td>
-    <td>北京信雅技术有限公司</td>
-	<td>工程师</td>
-	<td>1人</td>
-	<td>不限</td>
-	<td>2000</td>
-    <td width="138" align="center">2012-10-13</td>
-    <td width="60" align="center"><a href="gangwei_updt.jsp?id=1">修改</a>|<a href="del.jsp?id=1&tablename=gangwei" onClick="return confirm('真的要删除？')">删除</a></td>
-  </tr>
+
 
 </table>
 

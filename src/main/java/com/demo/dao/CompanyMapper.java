@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 public interface CompanyMapper {
     @Delete({
         "delete from COMPANY_INFO",
@@ -36,6 +38,14 @@ public interface CompanyMapper {
     })
     @ResultMap("BaseResultMap")
     Company selectByPrimaryKey(String ID);
+
+    @Select({
+            "select",
+            "*",
+            "from COMPANY_INFO"
+    })
+    @ResultMap("BaseResultMap")
+    List<Company> selectAll();
 
     int updateByPrimaryKeySelective(Company record);
 
