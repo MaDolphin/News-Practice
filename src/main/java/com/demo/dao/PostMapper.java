@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 public interface PostMapper {
     @Delete({
         "delete from POST_INFO",
@@ -56,4 +58,20 @@ public interface PostMapper {
         "where ID = #{id,jdbcType=VARCHAR}"
     })
     int updateByPrimaryKey(Post record);
+
+    @Select({
+            "select",
+            "*",
+            "from POST_INFO"
+    })
+    @ResultMap("BaseResultMap")
+    List<Post> findAllPostInfo();
+
+   /* @Select({
+            "select",
+            "*",
+            "from POST_INFO"
+    })
+    @ResultMap("BaseResultMap")*/
+    List<Post> searchPostInfo(String id,String name);
 }

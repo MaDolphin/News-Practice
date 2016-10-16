@@ -1,11 +1,14 @@
 package com.demo.dao;
 
 import com.demo.entity.News;
+import com.demo.entity.Post;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+
+import java.util.List;
 
 public interface NewsMapper {
     @Delete({
@@ -48,4 +51,6 @@ public interface NewsMapper {
         "where ID = #{ID,jdbcType=VARCHAR}"
     })
     int updateByPrimaryKey(News record);
+
+
 }

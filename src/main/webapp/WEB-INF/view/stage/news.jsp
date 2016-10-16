@@ -10,9 +10,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
     <title>就业信息网</title>
-    <link href="css/main1.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="js/setHomeSetFav.js"></script>
-    <script type="text/javascript" src="js/myfocus-2.0.1.min.js" charset="utf-8"></script><!--引入myFocus库-->
+    <link href="/css/main1.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/setHomeSetFav.js"></script>
+    <script type="text/javascript" src="/js/myfocus-2.0.1.min.js" charset="utf-8"></script><!--引入myFocus库-->
     <script type="text/javascript">
         myFocus.set({
             id:'boxID',//焦点图盒子ID
@@ -41,7 +41,7 @@
     <div class="logo">
         <div class="logo_pic"></div>
         <div class="logo_content">
-            <img src="images/tel.jpg" />
+            <img src="/images/tel.jpg" />
             <span class="tel">24小时服务热线:123-456-7890</span>
 
         </div>
@@ -50,10 +50,10 @@
         <div class="nav_left"></div>
         <div class="nav_middle">
             <ul>
-                <li><a href="index.html">首页</a></li>
+                <li><a href="index.jsp">首页</a></li>
                 <li><a href="news.jsp">新闻动态</a></li>
                 <li><a href="gongsilist.jsp">公司信息</a></li>
-                <li><a href="gangweilist.jsp">岗位信息</a></li>
+                <li><a href="/news/post_info">岗位信息</a></li>
                 <li><a href="login.jsp">管理中心</a></li>
             </ul>
         </div>
@@ -61,14 +61,14 @@
     </div>
     <div class="ad">
         <div id="boxID"><!--焦点图盒子-->
-            <div class="loading"><img src="images/loading.gif" alt="请稍候..." /></div>
+            <div class="loading"><img src="/images/loading.gif" alt="请稍候..." /></div>
             <!--载入画面(可删除)-->
             <div class="pic"><!--内容列表(li数目可随意增减)-->
                 <ul>
-                    <li><a href="#"><img src="images/ad2.jpg" thumb="" alt="" text="详细描述2" /></a></li>
-                    <li><a href="#"><img src="images/ad3.jpg" thumb="" alt="" text="详细描述3" /></a></li>
-                    <li><a href="#"><img src="images/ad4.jpg" thumb="" alt="" text="详细描述4" /></a></li>
-                    <li><a href="#"><img src="images/ad3.jpg" thumb="" alt="" text="详细描述5" /></a></li>
+                    <li><a href="#"><img src="/images/ad2.jpg" thumb="" alt="" text="详细描述2" /></a></li>
+                    <li><a href="#"><img src="/images/ad3.jpg" thumb="" alt="" text="详细描述3" /></a></li>
+                    <li><a href="#"><img src="/images/ad4.jpg" thumb="" alt="" text="详细描述4" /></a></li>
+                    <li><a href="#"><img src="/images/ad3.jpg" thumb="" alt="" text="详细描述5" /></a></li>
                 </ul>
             </div>
         </div>
@@ -118,6 +118,7 @@
             </ul>
         </div>
     </div>
+</div>
 </body>
 </html>
 

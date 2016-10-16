@@ -12,5 +12,9 @@
 </head>
 <body>
 
+<script language="JavaScript">
+    window.location.href = "/news/test";
+</script>
+
 </body>
 </html>

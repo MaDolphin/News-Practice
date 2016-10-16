@@ -17,6 +17,27 @@
     ID, COMPANY_ID, NAME, DEMAND_NUMBER, SEX, EDUCATION, SALARY, WORKPLACE, DESCRIPTION, 
     ADD_DATE
   </sql>
+  <select id="searchPostInfo" resultMap="BaseResultMap">
+    SELECT * FROM POST_INFO
+      <where>
+        <if test="id==null">
+          <if test="name!=null">
+            NAME LIKE #{1}
+          </if>
+        </if>
+        <if test="id!=null">
+          <if test="name==null">
+            COMPANY_ID=#{0}
+          </if>
+        </if>
+        <if test="id!=null">
+          COMPANY_ID=#{0}
+          <if test="name!=null">
+            AND NAME LIKE #{1}
+          </if>
+        </if>
+      </where>
+  </select>
   <insert id="insertSelective" parameterType="com.demo.entity.Post" >
     insert into POST_INFO
     <trim prefix="(" suffix=")" suffixOverrides="," >
