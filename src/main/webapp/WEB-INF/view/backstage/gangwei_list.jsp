@@ -15,8 +15,8 @@ rel=stylesheet>
 	
 	<script language="javascript">
 		function add(){
-			window.location="gangwei_add.jsp";
-		}
+			window.location="/gangwei_add";
+        }
 	</script>    
 
 
@@ -64,5 +64,6 @@ rel=stylesheet>
 </table>
 
   </body>
+
 </html>
 
