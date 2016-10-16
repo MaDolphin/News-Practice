@@ -1,14 +1,16 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: xfcq
+  Date: 2016/10/13
+  Time: 12:44
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-
+    <title>Title</title>
 </head>
 <body>
-<h2>Hello World!</h2>
-<form action="test" method="post">
-    <%--<input type="date" name="startTime">--%>
-    <input type="text" value="2016-01-01" name="startTime">
-    <input type="submit" value="1">
-</form>
+
 </body>
 </html>
