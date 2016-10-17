@@ -35,6 +35,8 @@ public class NewsController {
 
     @RequestMapping("/search_post_info")
     public String searchPostInfo(String id,String name,Model model){
+        id = "%" + id + "%";
+        name = "%" + name + "%";
         List<Post> postList =newsService.searchPostInfo(id,name);
         System.out.println(postList.get(0).getId());
         model.addAttribute("postList",postList);

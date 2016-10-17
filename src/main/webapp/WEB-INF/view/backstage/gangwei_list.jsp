@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ page language="java"  pageEncoding="gb2312"%>
+<%@ page language="java"  pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>╦зн╩</title><LINK href="<%=path %>/css/CSS.css" type=text/css 
+    <title>Е╡≈Д╫█</title><LINK href="<%=path %>/css/CSS.css" type=text/css 
 rel=stylesheet>
 	
 	<script language="javascript">
@@ -35,30 +35,30 @@ rel=stylesheet>
       }
   </style>
   <body >
-  <p>рясп╦зн╩ап╠Мё╨</p>
-  <form name="form1" id="form1" method="post" action="">
-   кякВ:╧╚к╬:
+  <p>Е╥╡Ф°┴Е╡≈Д╫█Е┬≈Х║╗О╪ </p>
+  <form name="form1" id="form1" method="post" action="/news/search_post_info">
+   Ф░°Г╢╒:Е┘╛Е▐╦:
      <input name="id" type="text" id="id" />
-     ╦зн╩цШЁф
+     Е╡≈Д╫█Е░█Г╖╟
      <input name="name" type="text" id="name" />
-     <input type="submit" name="Submit" value="╡Иур" />
-	 <%--<input type="button" name="but" value="пбтЖ" onclick="add();"/>--%>
+     <input type="submit" name="Submit" value="Ф÷╔Ф┴╬" />
+	 <%--<input type="button" name="but" value="Ф√╟Е╒·" onclick="add();"/>--%>
 </form>
 
 <table width="100%" border="1" align="center" cellpadding="3" cellspacing="1" bordercolor="00FFFF" style="border-collapse:collapse">  
   <thead>
   <tr>
-      <th width="30" align="center" bgcolor="CCFFFF">пР╨е</th>
-      <th bgcolor='#CCFFFF'>╧╚к╬</th>
-      <th bgcolor='#CCFFFF'>╦зн╩цШЁф</th>
-      <th bgcolor='#CCFFFF'>упф╦хкйЩ</th>
-      <th bgcolor='#CCFFFF'>пт╠Пр╙гС</th>
-      <th bgcolor='#CCFFFF'>я╖юЗ</th>
-      <th bgcolor='#CCFFFF'>╧╓вВ╣ь╣Ц</th>
-      <th bgcolor='#CCFFFF'>ж╟н╩цХйЖ</th>
-      <th bgcolor='#CCFFFF'>тбп╫</th>
-      <th width="138" align="center" bgcolor="CCFFFF">лМ╪сй╠╪Д</th>
-      <%--<th width="60" align="center" bgcolor="CCFFFF">╡ывВ</th>--%>
+      <th width="30" align="center" bgcolor="CCFFFF">Е╨▐Е▐╥</th>
+      <th bgcolor='#CCFFFF'>Е┘╛Е▐╦</th>
+      <th bgcolor='#CCFFFF'>Е╡≈Д╫█Е░█Г╖╟</th>
+      <th bgcolor='#CCFFFF'>Ф▀⌡Х│≤Д╨╨Ф∙╟</th>
+      <th bgcolor='#CCFFFF'>Ф─╖Е┬╚Х╕│Ф╠┌</th>
+      <th bgcolor='#CCFFFF'>Е╜╕Е▌├</th>
+      <th bgcolor='#CCFFFF'>Е╥╔Д╫°Е°╟Г┌╧</th>
+      <th bgcolor='#CCFFFF'>Х│▄Д╫█Ф▐▐Х©╟</th>
+      <th bgcolor='#CCFFFF'>Ф°┬Х√╙</th>
+      <th width="138" align="center" bgcolor="CCFFFF">Ф╥╩Е┼═Ф≈╤И≈╢</th>
+      <%--<th width="60" align="center" bgcolor="CCFFFF">Ф⌠█Д╫°</th>--%>
   </tr>
   </thead>
     <tbody>
@@ -74,7 +74,7 @@ rel=stylesheet>
                 <td>${post.description}</td>
                 <td>${post.salary}</td>
                 <td width="138" align="center">${post.addDate}</td>
-               <%-- <td width="60" align="center"><a href="gangwei_updt.jsp?id=1">пч╦д</a>|<a href="del.jsp?id=1&tablename=gangwei" onClick="return confirm('уФ╣др╙и╬ЁЩё©')">и╬ЁЩ</a></td>--%>
+               <%-- <td width="60" align="center"><a href="gangwei_updt.jsp?id=1">Д©╝Ф■╧</a>|<a href="del.jsp?id=1&tablename=gangwei" onClick="return confirm('Г°÷Г └Х╕│Е┬═И≥╓О╪÷')">Е┬═И≥╓</a></td>--%>
             </tr>
         </c:forEach>
 
@@ -83,37 +83,37 @@ rel=stylesheet>
   
  <%-- <tr>
     <td width="30" align="center">1</td>
-    <td>╠╠╬╘пеяе╪╪йУспоч╧╚к╬</td>
-	<td>╪╪йУт╠</td>
-	<td>2хк</td>
-	<td>дп</td>
+    <td>Е▄≈Д╨╛Д©║И⌡┘Ф┼─Ф°╞Ф°┴И≥░Е┘╛Е▐╦</td>
+	<td>Ф┼─Ф°╞Е▒≤</td>
+	<td>2Д╨╨</td>
+	<td>Г■╥</td>
 	<td>1500</td>
     <td width="138" align="center">2012-10-13</td>
-    <td width="60" align="center"><a href="gangwei_updt.jsp?id=1">пч╦д</a>|<a href="del.jsp?id=1&tablename=gangwei" onClick="return confirm('уФ╣др╙и╬ЁЩё©')">и╬ЁЩ</a></td>
+    <td width="60" align="center"><a href="gangwei_updt.jsp?id=1">Д©╝Ф■╧</a>|<a href="del.jsp?id=1&tablename=gangwei" onClick="return confirm('Г°÷Г └Х╕│Е┬═И≥╓О╪÷')">Е┬═И≥╓</a></td>
   </tr>
   
   <tr>
     <td width="30" align="center">2</td>
-    <td>╠╠╬╘пеяе╪╪йУспоч╧╚к╬</td>
-	<td>╧╓Ёлй╕</td>
-	<td>1хк</td>
-	<td>╡╩оч</td>
+    <td>Е▄≈Д╨╛Д©║И⌡┘Ф┼─Ф°╞Ф°┴И≥░Е┘╛Е▐╦</td>
+	<td>Е╥╔Г╗▀Е╦┬</td>
+	<td>1Д╨╨</td>
+	<td>Д╦█И≥░</td>
 	<td>2000</td>
     <td width="138" align="center">2012-10-13</td>
-    <td width="60" align="center"><a href="gangwei_updt.jsp?id=1">пч╦д</a>|<a href="del.jsp?id=1&tablename=gangwei" onClick="return confirm('уФ╣др╙и╬ЁЩё©')">и╬ЁЩ</a></td>
+    <td width="60" align="center"><a href="gangwei_updt.jsp?id=1">Д©╝Ф■╧</a>|<a href="del.jsp?id=1&tablename=gangwei" onClick="return confirm('Г°÷Г └Х╕│Е┬═И≥╓О╪÷')">Е┬═И≥╓</a></td>
   </tr>--%>
 
 </table>
   <div class="page">
-      <a href="">йврЁ</a>
-      <a href="">иор╩рЁ</a>
+      <a href="">И╕√И║╣</a>
+      <a href="">Д╦┼Д╦─И║╣</a>
       <a href="">1</a>
       <a href="">2</a>
       <a href="">3</a>
       <a href="">4</a>
       <a href="">5</a>
-      <a href="">обр╩рЁ</a>
-      <a href="">д╘рЁ</a>
+      <a href="">Д╦▀Д╦─И║╣</a>
+      <a href="">Ф°╚И║╣</a>
   </div>
 
 

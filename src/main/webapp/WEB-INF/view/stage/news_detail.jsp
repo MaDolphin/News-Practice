@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+
     <title>就业信息网</title>
     <link href="css/main1.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="js/setHomeSetFav.js"></script>

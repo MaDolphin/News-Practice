@@ -1,11 +1,7 @@
 package com.demo.dao;
 
 import com.demo.entity.Post;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.ResultMap;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -73,5 +69,5 @@ public interface PostMapper {
             "from POST_INFO"
     })
     @ResultMap("BaseResultMap")*/
-    List<Post> searchPostInfo(String id,String name);
+    List<Post> searchPostInfo(@Param(value = "id") String id,@Param(value = "name") String name);
 }
