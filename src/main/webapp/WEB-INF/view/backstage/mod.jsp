@@ -1,10 +1,10 @@
-<%@ page contentType="text/html; charset=gb2312" language="java"%>
+<%@ page contentType="text/html; charset=utf-8" language="java"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <title>ĞŞ¸ÄÃÜÂë</title>
+
+    <title>ä¿®æ”¹å¯†ç </title>
     <style type="text/css">
         <!--
         .STYLE1 {
@@ -20,28 +20,28 @@
 </head>
 
 <body>
-<form name="opform" method="post" action="/add_form" onsubmit="return check();">
-    <table width="750" border="0" align="center" cellpadding="0" cellspacing="1" bordercolor="1" bgcolor="#9EC3F2" style="font-size:12px">
+<form name="opform" method="post" action="/updatepwd" onsubmit="return check();">
+    <table width="80%" border="0" align="center" cellpadding="0" cellspacing="1" bordercolor="1" bgcolor="#9EC3F2" style="font-size:12px">
         <!--DWLayoutTable-->
         <tr>
-            <td height="25" colspan="2" align="left" valign="middle" background="img/bg_titlebarr.gif"><span class="STYLE1">&nbsp;ĞŞ¸ÄÃÜÂëĞÅÏ¢&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+            <td height="25" colspan="2" align="left" valign="middle" background="img/bg_titlebarr.gif"><span class="STYLE1">&nbsp;ä¿®æ”¹å¯†ç ä¿¡æ¯</span></td>
         </tr>
 
         <tr>
-            <td width="115" height="25" align="center" valign="middle" bgcolor="#F9FCFF">ÕËºÅ</td>
+            <td width="115" height="25" align="center" valign="middle" bgcolor="#F9FCFF">è´¦å·</td>
             <td width="632" align="left" valign="middle" bgcolor="#F9FCFF"><input name="username" type="text" id="jname" value="${user.username}"  readonly/></td>
         </tr>
         <tr>
-            <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">Ô­ÃÜÂë</td>
+            <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">åŸå¯†ç </td>
             <td align="left" valign="middle" bgcolor="#F9FCFF"><input name="oldpwd" type="password" id="oldpwd" maxlength="18"  required /></td>
         </tr>
         <tr>
-            <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">ĞÂÃÜÂë</td>
+            <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">æ–°å¯†ç </td>
             <td align="left" valign="middle" bgcolor="#F9FCFF"><input name="newpwd" type="password" id="newpwd" maxlength="18"  required /></td>
         </tr>
 
         <tr>
-            <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">È·ÈÏĞÂÃÜÂë</td>
+            <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">ç¡®è®¤æ–°å¯†ç </td>
             <td align="left" valign="middle" bgcolor="#F9FCFF"><input name="confirmpwd" type="password" id="confirmpwd" maxlength="18"  required /></td>
         </tr>
 
@@ -49,8 +49,8 @@
     <table width="750" border="0" cellpadding="0" cellspacing="0" align="center">
         <!--DWLayoutTable-->
         <tr>
-            <td width="750" height="30" align="center" valign="middle"><input type="submit" name="Submit" value="ĞŞ¸Ä" />&nbsp;
-                <input type="button" name="btn" value="·µ»Ø" onclick="history.go(-1);"/>
+            <td width="750" height="30" align="center" valign="middle"><input type="submit" name="Submit" value="ä¿®æ”¹" />&nbsp;
+                <input type="button" name="btn" value="è¿”å›" onclick="history.go(-1);"/>
             </td>
         </tr>
     </table>
@@ -64,18 +64,29 @@
        var pwd=$("#newpwd").val();
        var conpwd=$("#confirmpwd").val();
        if(pwd!=conpwd){
-           alert("Á½´ÎÃÜÂëÊäÈë²»Ò»ÖÂ");
+           alert("ä¸¤æ¬¡å¯†ç è¾“å…¥ä¸ä¸€è‡´");
            return false;
        }
        else if(oldpwd==pwd){
-           alert("ÃÜÂë²»ÄÜÓëÔ­À´µÄÒ»ÖÂ");
+           alert("å¯†ç ä¸èƒ½ä¸åŸæ¥çš„ä¸€è‡´");
            return false;
        }
-       else if(oldpwd=='${user.password}'){
-           alert("Ô­ÃÜÂë´íÎó");
+       else if(oldpwd!='${user.password}'){
+           alert("åŸå¯†ç é”™è¯¯");
            return false;
        }
-       return true;
+       $.ajax({
+           url:"updatepwd",
+           data:{
+               newpwd:pwd
+           },
+           type:"post",
+           success:function () {
+               alert("å¯†ç ä¿®æ”¹æˆåŠŸï¼Œè¯·é‡æ–°ç™»é™†");
+               top.location.href="/login";
+           }
+       })
+       return false;
 
    }
 

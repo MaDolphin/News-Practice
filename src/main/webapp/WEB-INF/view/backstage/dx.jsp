@@ -1,5 +1,5 @@
 
-<%@ page language="java"  pageEncoding="gb2312"%>
+<%@ page language="java"  pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -17,18 +17,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body >
 
   <form name="form1" id="form1" method="post" action="dx_post.jsp?lb=1">
-  ÏµÍ³¹«¸æ:
+  ç³»ç»Ÿå…¬å‘Š:
  
    <table width="100%" border="1" align="center" cellpadding="3" cellspacing="1" bordercolor="#00FFFF" style="border-collapse:collapse">  
      
-     <tr><td>ÄÚÈÝ£º</td><td><textarea name="content" rows="20" cols="50"></textarea>
+     <tr><td>å†…å®¹ï¼š</td><td><textarea name="content" rows="20" cols="50"></textarea>
 			
 			</tr>
      
     <tr>
       <td>&nbsp;</td>
-      <td><input type="submit" name="Submit" value="È·¶¨±à¼­" onClick="return check();" />
-      <input type="reset" name="Submit2" value="ÖØÖÃ" /></td>
+      <td><input type="submit" name="Submit" value="ç¡®å®šç¼–è¾‘" onClick="return check();" />
+      <input type="reset" name="Submit2" value="é‡ç½®" /></td>
     </tr>
   </table>
 </form>

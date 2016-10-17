@@ -1,5 +1,5 @@
 
-<%@ page language="java"  pageEncoding="gb2312"%>
+<%@ page language="java"  pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>╦зн╩</title><LINK href="<%=path %>/css/CSS.css" type=text/css 
+    <title>Е╡≈Д╫█</title><LINK href="<%=path %>/css/CSS.css" type=text/css 
 rel=stylesheet>
 	
 	<script language="javascript">
@@ -24,26 +24,26 @@ rel=stylesheet>
   </head>
 
   <body >
-  <p>рясп╦зн╩ап╠Мё╨</p>
+  <p>Е╥╡Ф°┴Е╡≈Д╫█Е┬≈Х║╗О╪ </p>
   <form name="query" id="form1" method="post" action="query">
-   кякВ:╧╚к╬:
+   Ф░°Г╢╒:Е┘╛Е▐╦:
      <input name="company" type="text" id="bianhao" />
-     ╦зн╩цШЁф
+     Е╡≈Д╫█Е░█Г╖╟
      <input name="jobname" type="text" id="mingcheng" />
-     <input type="submit" name="Submit" value="╡Иур" />
-	 <input type="button" name="but" value="пбтЖ" onclick="add();"/>
+     <input type="submit" name="Submit" value="Ф÷╔Ф┴╬" />
+	 <input type="button" name="but" value="Ф√╟Е╒·" onclick="add();"/>
 </form>
 
 <table width="100%" border="1" align="center" cellpadding="3" cellspacing="1" bordercolor="00FFFF" style="border-collapse:collapse">  
   <tr>
-    <td width="30" align="center" bgcolor="CCFFFF">пР╨е</td>
-    <td bgcolor='#CCFFFF'>╧╚к╬</td>
-	<td bgcolor='#CCFFFF'>╦зн╩цШЁф</td>
-	<td bgcolor='#CCFFFF'>упф╦хкйЩ</td>
-	<td bgcolor='#CCFFFF'>пт╠Пр╙гС</td>
-	<td bgcolor='#CCFFFF'>тбп╫</td>
-    <td width="138" align="center" bgcolor="CCFFFF">лМ╪сй╠╪Д</td>
-    <td width="60" align="center" bgcolor="CCFFFF">╡ывВ</td>
+    <td width="100" align="center" bgcolor="CCFFFF">Е╨▐Е▐╥</td>
+    <td bgcolor='#CCFFFF'>Е┘╛Е▐╦</td>
+	<td bgcolor='#CCFFFF'>Е╡≈Д╫█Е░█Г╖╟</td>
+	<td bgcolor='#CCFFFF'>Ф▀⌡Х│≤Д╨╨Ф∙╟</td>
+	<td bgcolor='#CCFFFF'>Ф─╖Е┬╚Х╕│Ф╠┌</td>
+	<td bgcolor='#CCFFFF'>Ф°┬Х√╙</td>
+    <td width="138" align="center" bgcolor="CCFFFF">Ф╥╩Е┼═Ф≈╤И≈╢</td>
+    <td width="60" align="center" bgcolor="CCFFFF">Ф⌠█Д╫°</td>
   </tr>
   <c:forEach items="${gangwei}" var="i">
       <tr>
@@ -54,7 +54,7 @@ rel=stylesheet>
           <td>${i.sex}</td>
           <td>${i.salary}</td>
           <td width="138" align="center">${i.addDate}</td>
-          <td width="60" align="center"><a href="gangwei_updt?id=${i.id}">пч╦д</a>|<a href="gangwei_dele?id=${i.id}" onClick="return confirm('уФ╣др╙и╬ЁЩё©')">и╬ЁЩ</a></td>
+          <td width="60" align="center"><a href="gangwei_updt?id=${i.id}">Д©╝Ф■╧</a>|<a href="gangwei_dele?id=${i.id}" onClick="return confirm('Г°÷Г └Х╕│Е┬═И≥╓О╪÷')">Е┬═И≥╓</a></td>
       </tr>
   </c:forEach>
 

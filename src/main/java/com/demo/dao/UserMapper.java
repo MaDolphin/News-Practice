@@ -34,7 +34,7 @@ public interface UserMapper {
     User selectByPrimaryKey(String id);
 
     @Select({
-          "select * from USER_INFO where username=#{0} and password=#{1}"
+          "select * from USER_INFO where username=#{0} and password=#{1} and status=1"
     })
     @ResultMap("BaseResultMap")
     User login(String name,String pwd);

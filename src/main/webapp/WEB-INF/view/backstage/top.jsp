@@ -1,5 +1,5 @@
 
-<%@ page language="java"  pageEncoding="gb2312"%>
+<%@ page language="java"  pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>╬мр╣пео╒мЬ</title>
+    <title>Е╟╠Д╦ Д©║Ф│╞Г╫▒</title>
 <LINK href="<%=path %>/css/CSS.css" type=text/css rel=stylesheet>
    <style type="text/css">
 <!--
@@ -46,17 +46,17 @@ intMinutes = today.getMinutes();
 intSeconds = today.getSeconds();
 if (intHours == 0) {
 hours = "12:";
-xfile = "PM";//нГр╧
+xfile = "PM";//Е█┬Е╓°
 } else if (intHours < 12) {
 hours = intHours+":";
-xfile = "AM";//ионГ
+xfile = "AM";//Д╦┼Е█┬
 } else if (intHours == 12) {
 hours = "12:";
-xfile = "PM";//уЩнГ
+xfile = "PM";//Ф╜ёЕ█┬
 } else {
 intHours = intHours - 12
 hours = intHours + ":";
-xfile = "PM";//обнГ
+xfile = "PM";//Д╦▀Е█┬
 }
 if (intHours < 10) {
 hours = "0"+intHours+":";
@@ -114,7 +114,7 @@ window.onload = tick;
         <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td width="92%" height="23" valign="bottom">&nbsp;</td>
-            <td width="8%" valign="bottom"><a href="logout.jsp" target="_parent">мкЁЖ</a></td>
+            <td width="8%" valign="bottom"><a href="/login" target="_parent">И──Е┤╨</a></td>
           </tr>
         </table></td>
         <td width="200" background="images/main_11.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">

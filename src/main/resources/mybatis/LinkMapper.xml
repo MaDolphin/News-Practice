@@ -46,4 +46,8 @@
     </set>
     where ID = #{ID,jdbcType=VARCHAR}
   </update>
+  <select id="selectLink" parameterType="com.demo.entity.Link" resultMap="BaseResultMap" >
+    select * from LINK_INFO
+    where NAME like #{NAME}
+  </select>
 </mapper>

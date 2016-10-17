@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 public interface LinkMapper {
     @Delete({
         "delete from LINK_INFO",
@@ -22,6 +24,8 @@ public interface LinkMapper {
     })
     int insert(Link record);
 
+
+
     int insertSelective(Link record);
 
     @Select({
@@ -32,6 +36,16 @@ public interface LinkMapper {
     })
     @ResultMap("BaseResultMap")
     Link selectByPrimaryKey(String ID);
+
+    @Select({
+            "select",
+            "*",
+            "from LINK_INFO"
+    })
+    @ResultMap("BaseResultMap")
+    List<Link> selectAll();
+
+    List<Link> selectLink(Link link);
 
     int updateByPrimaryKeySelective(Link record);
 

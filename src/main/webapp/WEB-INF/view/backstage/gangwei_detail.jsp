@@ -1,10 +1,10 @@
-<%@ page contentType="text/html; charset=gb2312" language="java"%>
+<%@ page contentType="text/html; charset=utf-8" language="java"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>岗位信息</title>
+
+<title>宀椾綅淇℃伅</title>
 <style type="text/css">
 <!--
 .STYLE1 {
@@ -25,15 +25,15 @@
 
   <!--DWLayoutTable-->
   <tr>
-    <td height="25" colspan="2" align="left" valign="middle" background="img/bg_titlebarr.gif"><span class="STYLE1">&nbsp;岗位信息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+    <td height="25" colspan="2" align="left" valign="middle" background="img/bg_titlebarr.gif"><span class="STYLE1">&nbsp;宀椾綅淇℃伅&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
   </tr>
   
   <tr>
-    <td width="115" height="25" align="center" valign="middle" bgcolor="#F9FCFF">岗位名称</td>
+    <td width="115" height="25" align="center" valign="middle" bgcolor="#F9FCFF">宀椾綅鍚嶇О</td>
     <td width="632" align="left" valign="middle" bgcolor="#F9FCFF"><input name="name" type="text" id="jname"  value="${gangwei.name}" readonly/></td>
     </tr>
   <tr>
-    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">公司</td>
+    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">鍏徃</td>
     <td align="left" valign="middle" bgcolor="#F9FCFF">
 		<select name="companyId" id="companyId" disabled>
             <c:forEach var="i" items="${companies}">
@@ -43,40 +43,40 @@
 	</td>
   </tr>  
   <tr>
-    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">性别要示</td>
+    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">鎬у埆瑕佺ず</td>
     <td align="left" valign="middle" bgcolor="#F9FCFF">
 		<select name="sex" id="sex" disabled>
-			<option value="0">男</option>
-			<option value="1">女</option>
-			<option value="2">不限</option>
+			<option value="0">鐢�</option>
+			<option value="1">濂�</option>
+			<option value="2">涓嶉檺</option>
 		</select>
 	</td>
   </tr> 
   <tr>
-    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">学历</td>
+    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">瀛﹀巻</td>
     <td align="left" valign="middle" bgcolor="#F9FCFF">
 		<select name="education" id="education" disabled>
-			<option value="0">专科</option>
-			<option value="1">本科</option>
-			<option value="2">不限</option>
+			<option value="0">涓撶</option>
+			<option value="1">鏈</option>
+			<option value="2">涓嶉檺</option>
 		</select>
 	</td>
   </tr>
   <tr>
-    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">招聘人数</td>
+    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">鎷涜仒浜烘暟</td>
     <td align="left" valign="middle" bgcolor="#F9FCFF"><input name="demandNumber" type="text" id="jzc" maxlength="18" value="${gangwei.demandNumber}" readonly /></td>
   </tr>
   <tr>
-    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">月薪</td>
+    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">鏈堣柂</td>
     <td align="left" valign="middle" bgcolor="#F9FCFF"><input name="salary" type="text" id="jzc" maxlength="18" value="${gangwei.salary}" readonly /></td>
   </tr>
 
   <tr>
-    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">工作地点</td>
+    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">宸ヤ綔鍦扮偣</td>
     <td align="left" valign="middle" bgcolor="#F9FCFF"><input name="workplace" type="text" id="jzc" maxlength="18" value="${gangwei.workplace}" readonly /></td>
   </tr>
   <tr>
-    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">职位描述</td>
+    <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">鑱屼綅鎻忚堪</td>
     <td align="left" valign="middle" bgcolor="#F9FCFF">
 		<textarea name="description" rows="10" cols="60" readonly>${gangwei.description}</textarea>
 	</td>
@@ -85,8 +85,8 @@
 <table width="750" border="0" cellpadding="0" cellspacing="0" align="center">
   <!--DWLayoutTable-->
   <tr>
-    <td width="750" height="30" align="center" valign="middle"><input type="button" name="Submit" value="编辑" onclick="edit('${gangwei.id}')" />&nbsp;
-		<input type="button" name="btn" value="返回" onclick="history.go(-1);"/>
+    <td width="750" height="30" align="center" valign="middle"><input type="button" name="Submit" value="缂栬緫" onclick="edit('${gangwei.id}')" />&nbsp;
+		<input type="button" name="btn" value="杩斿洖" onclick="history.go(-1);"/>
 	</td>
   </tr>
 </table>

@@ -1,4 +1,4 @@
-<%@ page language="java"  pageEncoding="gb2312"%>
+<%@ page language="java"  pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
     <base href="<%=basePath%>">
     
-<title>”√ªßµ«¬º</title>
+<title>Áî®Êà∑ÁôªÂΩï</title>
 <style type="text/css">
 <!--
 body {
@@ -39,8 +39,8 @@ body {
   <tr>
     <td height="134" valign="bottom"><table width="72%" height="51" border="0" align="center">
       <tr>
-        <td><div style="font-family:ÀŒÃÂ; color:#FFFFFF; filter:Glow(Color=#000000,Strength=2); WIDTH: 100%; FONT-WEIGHT: bold; FONT-SIZE: 19pt; margin-top:5pt">
-            <div align="center" class="STYLE5">æÕ“µ–≈œ¢Õ¯</div>
+        <td><div style="font-family:ÂÆã‰Ωì; color:#FFFFFF; filter:Glow(Color=#000000,Strength=2); WIDTH: 100%; FONT-WEIGHT: bold; FONT-SIZE: 19pt; margin-top:5pt">
+            <div align="center" class="STYLE5">Â∞±‰∏ö‰ø°ÊÅØÁΩë</div>
         </div></td>
       </tr>
     </table>
@@ -58,21 +58,23 @@ body {
               <tr>
                 <td width="48%">&nbsp;</td>
                 <td width="52%"><table width="82%" border="0" align="left" cellpadding="0" cellspacing="0">
-                    <form name="form1" method="post" action="/login">
+                    <form name="form1" method="post" action="/logincheck">
                       <tr>
-                        <td width="21%" height="30"><div align="center"><span class="STYLE3">”√ªß</span></div></td>
+                        <td width="21%" height="30"><div align="center"><span class="STYLE3">Áî®Êà∑</span></div></td>
                         <td width="79%" height="30"><input name="username" type="text" id="username"  style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;">
                             <input name="login" type="hidden" id="login" value="1"></td>
                       </tr>
                       <tr>
-                        <td height="30"><div align="center"><span class="STYLE3">√‹¬Î</span></div></td>
+                        <td height="30"><div align="center"><span class="STYLE3">ÂØÜÁ†Å</span></div></td>
                         <td height="30"><input name="password" type="password" id="pwd"  style="height:18px; width:130px; border:solid 1px #cadcb2; font-size:12px; color:#81b432;"></td>
                       </tr>
-                      
+                      <tr>
+                        <td colspan="2" align="center">${loginErroe}</td>
+                      </tr>
                       <tr>
                         <td height="30">&nbsp;</td>
-                        <td height="30"><input type="submit" name="Submit" value="µ«¬Ω">
-                            <input type="reset" name="Submit2" value="÷ÿ÷√"></td>
+                        <td height="30"><input type="submit" name="Submit" value="ÁôªÈôÜ">
+                            <input type="reset" name="Submit2" value="ÈáçÁΩÆ"></td>
                       </tr>
                     </form>
                 </table></td>

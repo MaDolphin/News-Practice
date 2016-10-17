@@ -1,10 +1,10 @@
-<%@ page language="java"  pageEncoding="gb2312"%>
+<%@ page language="java"  pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <%String path = request.getContextPath(); %>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>ÎŞ±êÌâÎÄµµ</title>
+
+<title>æ— æ ‡é¢˜æ–‡æ¡£</title>
 <style type="text/css">
 <!--
 body {
@@ -57,25 +57,25 @@ function addqkOpen(BcgID)
 
 <body>
 <SCRIPT LANGUAGE='JavaScript'>
-foldersTree = gFldr('<DIV CLASS=fldrroot><b>ÏµÍ³¹¦ÄÜÁĞ±í</b></DIV>','');
+foldersTree = gFldr('<DIV CLASS=fldrroot><b>ç³»ç»ŸåŠŸèƒ½åˆ—è¡¨</b></DIV>','');
 
-Class1 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>¹ÜÀíÔ±ÕÊºÅ¹ÜÀí</DIV>', ''));
-insDoc(Class1, gLnk(1, '<a href=yhzhgl.jsp target=hsgmain alt=¹ÜÀíÔ±ÕÊºÅ¹ÜÀí>¹ÜÀíÔ±ÕÊºÅ¹ÜÀí</a>', '', '<%=path %>/images/editinfo.gif'));
+Class1 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>ç®¡ç†å‘˜å¸å·ç®¡ç†</DIV>', ''));
+insDoc(Class1, gLnk(1, '<a href=yhzhgl.jsp target=hsgmain alt=ç®¡ç†å‘˜å¸å·ç®¡ç†>ç®¡ç†å‘˜å¸å·ç®¡ç†</a>', '', '<%=path %>/images/editinfo.gif'));
 
-Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>Õ¾ÄÚĞÂÎÅ¹ÜÀí</DIV>', ''));
-insDoc(Class2, gLnk(1, '<a href=xinwentongzhi_list.jsp?lb=Õ¾ÄÚĞÂÎÅ target=hsgmain alt=Õ¾ÄÚĞÂÎÅ²éÑ¯>Õ¾ÄÚĞÂÎÅ¹ÜÀí</a>', '', '<%=path %>/images/editinfo.gif'));
-insDoc(Class2, gLnk(1, '<a href=xinwentongzhi_list.jsp?lb=Õ¾ÄÚĞÂÎÅ target=hsgmain alt=Õ¾ÄÚĞÂÎÅ²éÑ¯>Í·ÌõĞÂÎÅ¹ÜÀí</a>', '', '<%=path %>/images/editinfo.gif'));
-Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>×¢²áÓÃ»§¹ÜÀí</DIV>', ''));
-insDoc(Class2, gLnk(1, '<a href=gongsi_list target=hsgmain alt=¹«Ë¾¹ÜÀí>¹«Ë¾¹ÜÀí</a>', '', '<%=path %>/images/editinfo.gif'));
-Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>ËùÓĞ¸ÚÎ»¹ÜÀí</DIV>', ''));
-insDoc(Class2, gLnk(1, '<a href=gangwei_list target=hsgmain alt=ËùÓĞ¸ÚÎ»¹ÜÀí>ËùÓĞ¸ÚÎ»¹ÜÀí</a>', '', '<%=path %>/images/editinfo.gif'));
+Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>ç«™å†…æ–°é—»ç®¡ç†</DIV>', ''));
+insDoc(Class2, gLnk(1, '<a href=xinwentongzhi_list.jsp?lb=ç«™å†…æ–°é—» target=hsgmain alt=ç«™å†…æ–°é—»æŸ¥è¯¢>ç«™å†…æ–°é—»ç®¡ç†</a>', '', '<%=path %>/images/editinfo.gif'));
+insDoc(Class2, gLnk(1, '<a href=xinwentongzhi_list.jsp?lb=ç«™å†…æ–°é—» target=hsgmain alt=ç«™å†…æ–°é—»æŸ¥è¯¢>å¤´æ¡æ–°é—»ç®¡ç†</a>', '', '<%=path %>/images/editinfo.gif'));
+Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>æ³¨å†Œç”¨æˆ·ç®¡ç†</DIV>', ''));
+insDoc(Class2, gLnk(1, '<a href=gongsi_list target=hsgmain alt=å…¬å¸ç®¡ç†>å…¬å¸ç®¡ç†</a>', '', '<%=path %>/images/editinfo.gif'));
+Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>æ‰€æœ‰å²—ä½ç®¡ç†</DIV>', ''));
+insDoc(Class2, gLnk(1, '<a href=gangwei_list target=hsgmain alt=æ‰€æœ‰å²—ä½ç®¡ç†>æ‰€æœ‰å²—ä½ç®¡ç†</a>', '', '<%=path %>/images/editinfo.gif'));
 
 
-<%--Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>ÏµÍ³¹ÜÀí</DIV>', ''));--%>
-<%--&lt;%&ndash;insDoc(Class2, gLnk(1, '<a href=youqinglianjie_add.jsp target=hsgmain>ÓÑÇéÁ¬½Ó¹ÜÀí</a>', '', '<%=path %>/images/editinfo.gif'));&ndash;%&gt;--%>
-<%--insDoc(Class2, gLnk(1, '<a href=dx.jsp?lb=ÁôÑÔ¹ÜÀí target=hsgmain>ÁôÑÔ¹ÜÀí</a>', '', '<%=path %>/images/editinfo.gif'));--%>
-insDoc(foldersTree, gLnk(1, '<a href=mod.jsp target=hsgmain>ĞŞ¸ÄÃÜÂë</a>', '', '<%=path %>/images/pwd.gif'));
-insDoc(foldersTree, gLnk(1, 'ÍË³ö', '<%=path%>/login.jsp', '<%=path %>/images/exit.gif'));
+Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>ç³»ç»Ÿç®¡ç†</DIV>', ''));
+insDoc(Class2, gLnk(1, '<a href=link_list target=hsgmain>å‹æƒ…è¿æ¥ç®¡ç†</a>', '', '<%=path %>/images/editinfo.gif'));
+<%--insDoc(Class2, gLnk(1, '<a href=dx.jsp?lb=ç•™è¨€ç®¡ç† target=hsgmain>ç•™è¨€ç®¡ç†</a>', '', '<%=path %>/images/editinfo.gif'));--%>
+insDoc(foldersTree, gLnk(1, '<a href=/mod target=hsgmain>ä¿®æ”¹å¯†ç </a>', '', '<%=path %>/images/pwd.gif'));
+insDoc(foldersTree, gLnk(1, 'é€€å‡º', '/login', '<%=path %>/images/exit.gif'));
 initializeDocument(0);</SCRIPT>
 </td>
       </tr>

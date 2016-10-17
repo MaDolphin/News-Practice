@@ -1,8 +1,8 @@
-<%@ page language="java"  pageEncoding="gb2312"%>
+<%@ page language="java"  pageEncoding="utf-8"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>就业信息网</title>
+
+<title>灏变笟淇℃伅缃�</title>
 <style type="text/css">
 <!--
 body {

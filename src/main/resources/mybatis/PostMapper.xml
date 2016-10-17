@@ -13,8 +13,8 @@
     <result column="DESCRIPTION" property="description" jdbcType="VARCHAR" />
     <result column="ADD_DATE" property="addDate" jdbcType="CHAR" />
     <association property="company" javaType="com.demo.entity.Company">
-      <id column="ID" property="ID" jdbcType="VARCHAR" />
-      <result column="NAME" property="NAME" jdbcType="VARCHAR" />
+      <id column="COMID" property="ID" jdbcType="VARCHAR" />
+      <result column="COMNAME" property="NAME" jdbcType="VARCHAR" />
       <result column="FUNDS" property="FUNDS" jdbcType="VARCHAR" />
       <result column="TEL" property="TEL" jdbcType="VARCHAR" />
       <result column="ADDRESS" property="ADDRESS" jdbcType="VARCHAR" />
@@ -129,16 +129,14 @@
     where ID = #{id,jdbcType=VARCHAR}
   </update>
   <select id="selectPost" parameterType="com.demo.entity.Post" resultMap="BaseResultMap" >
-    select * from POST_INFO p,COMPANY_INFO com
+    select p.*,com.ID as comID,com.NAME as comNAME  from POST_INFO p inner join  COMPANY_INFO com
+    on p.COMPANY_ID like com.ID
     <where>
       <if test="companyId != null" >
-        p.COMPANY_ID like #{companyId,jdbcType=VARCHAR}
+        com.NAME like #{companyId,jdbcType=VARCHAR}
       </if>
       <if test="name != null" >
         and p.NAME like #{name,jdbcType=VARCHAR}
-      </if>
-      <if test="true" >
-        and p.COMPANY_ID like com.ID
       </if>
     </where>
   </select>

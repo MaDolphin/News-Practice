@@ -44,8 +44,8 @@ public interface PostMapper {
 
     @Select({
             "select",
-            "*",
-            "from POST_INFO,COMPANY_INFO  where POST_INFO.COMPANY_ID like COMPANY_INFO.ID "
+            "p.*,com.ID as COMID,com.NAME as COMNAME",
+            "from POST_INFO p inner join COMPANY_INFO com on p.COMPANY_ID like com.ID "
     })
     @ResultMap("BaseResultMap")
     List<Post> selectAll();

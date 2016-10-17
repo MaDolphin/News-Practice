@@ -1,5 +1,5 @@
 
-<%@ page language="java"  pageEncoding="gb2312"%>
+<%@ page language="java"  pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -35,7 +35,7 @@ body {
         <td width="29" height="24"><img src="images/main_45.gif" width="29" height="24" /></td>
         <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="369"><span class="STYLE1">°æ±¾ <%
+            <td width="369"><span class="STYLE1">ç‰ˆæœ¬ <%
 	  java.util.Date date = new java.util.Date();
 java.text.SimpleDateFormat format = new java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.CHINA);
 
@@ -43,7 +43,7 @@ String result = format.format(date);
 out.print(result.substring(0,4));
 	  %> V1.0 </span></td>
             <td width="814" class="STYLE1"></td>
-            <td width="185" nowrap="nowrap" class="STYLE1"><div align="center"><img src="images/main_51.gif" width="12" height="12" /> ÈçÓÐÒÉÎÊÇëÓë¼¼ÊõÈËÔ±ÁªÏµ</div></td>
+            <td width="185" nowrap="nowrap" class="STYLE1"><div align="center"><img src="images/main_51.gif" width="12" height="12" /> å¦‚æœ‰ç–‘é—®è¯·ä¸ŽæŠ€æœ¯äººå‘˜è”ç³»</div></td>
           </tr>
         </table></td>
         <td width="14"><img src="images/main_49.gif" width="14" height="24" /></td>
