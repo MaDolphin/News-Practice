@@ -17,6 +17,8 @@ public class News {
 
     private String PHOTO;
 
+    private User USER;
+
     public String getID() {
         return ID;
     }
@@ -72,4 +74,13 @@ public class News {
     public void setPHOTO(String PHOTO) {
         this.PHOTO = PHOTO == null ? null : PHOTO.trim();
     }
+
+    public User getUSER() {
+        return USER;
+    }
+
+    public void setUSER(User USER) {
+        this.USER = USER;
+    }
+
 }

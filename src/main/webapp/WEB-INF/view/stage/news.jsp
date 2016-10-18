@@ -51,8 +51,8 @@
         <div class="nav_middle">
             <ul>
                 <li><a href="index.jsp">首页</a></li>
-                <li><a href="news.jsp">新闻动态</a></li>
-                <li><a href="gongsilist.jsp">公司信息</a></li>
+                <li><a href="/news/test">新闻动态</a></li>
+                <li><a href="company.jsp">公司信息</a></li>
                 <li><a href="/news/post_info">岗位信息</a></li>
                 <li><a href="login.jsp">管理中心</a></li>
             </ul>

@@ -52,5 +52,14 @@ public interface NewsMapper {
     })
     int updateByPrimaryKey(News record);
 
+    @Select({
+            "select",
+            "*",
+            "from NEWS_INFO"
+    })
+    @ResultMap("BaseResultMap")
+    List<News> findAllNewsInfo();
+
+    News searchNewsInfo(String ID);
 
 }

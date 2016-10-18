@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: xfcq
@@ -8,7 +10,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <title>企业网站实例</title>
     <link href="/css/main.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="/js/setHomeSetFav.js"></script>
@@ -96,10 +97,13 @@
 
             <div class="news_list">
                 <ul>
-                    <li><span>2014-06-01</span> <a href="news_detail.html">【 用户篇】“有为屌丝”在路上</a></li>
-                    <li><span>2014-06-01</span><a href="news.html">【有奖活动】给父亲的三行书信</a></li>
-                    <li><span>2014-05-30</span><a href="news.html">《程序猿，请晒出你的童年》活动获奖公告</a></li>
-                    <li><span>2014-05-28</span><a href="news.html" title="aa">破茧成蝶——美女程序员的蜕变史</a></li>
+                    <c:forEach var="news" items="${newsList}">
+                        <li>
+                            <span><fmt:formatDate value="${news.ADD_DATE}" pattern="yyyy-MM-dd" type="date" dateStyle="long" /></span>
+                            <a href="/news/search_news_info?ID=${news.ID}">${news.TITLE}</a>
+                        </li>
+                    </c:forEach>
+
                 </ul>
             </div>
             <!--news_list结束-->

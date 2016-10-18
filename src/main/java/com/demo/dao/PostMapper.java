@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+import java.util.List;
+
 public interface PostMapper {
     @Delete({
         "delete from POST_INFO",
@@ -37,6 +39,17 @@ public interface PostMapper {
     })
     @ResultMap("BaseResultMap")
     Post selectByPrimaryKey(String id);
+
+    @Select({
+            "select",
+            "p.*,com.ID as COMID,com.NAME as COMNAME",
+            "from POST_INFO p inner join COMPANY_INFO com on p.COMPANY_ID like com.ID "
+    })
+    @ResultMap("BaseResultMap")
+    List<Post> selectAll();
+
+
+    List<Post> selectPost(Post post);
 
     int updateByPrimaryKeySelective(Post record);
 

@@ -1,6 +1,7 @@
 package com.demo.dao;
 
 import com.demo.entity.Company;
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
