@@ -3,7 +3,6 @@ package com.demo.controller;
 import com.demo.dao.NewsMapper;
 import com.demo.entity.News;
 import com.demo.entity.Post;
-import com.demo.service.NewsService;
 import com.github.miemiedev.mybatis.paginator.domain.Order;
 import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import org.springframework.http.HttpRequest;
@@ -50,5 +49,10 @@ public class NewsController {
         model.addAttribute("titleName","新闻动态");
         model.addAttribute("newsDetail",news);
         return "/stage/news_detail";
+    }
+
+    @RequestMapping("/about")
+    public String aboutInfo(){
+        return "/stage/about";
     }
 }
