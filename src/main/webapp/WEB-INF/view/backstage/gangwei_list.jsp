@@ -28,7 +28,7 @@ rel=stylesheet>
   <form name="query" id="form1" method="post" action="query">
    搜索:公司:
      <input name="company" type="text" id="bianhao" />
-     岗位名称
+      岗位名称
      <input name="jobname" type="text" id="mingcheng" />
      <input type="submit" name="Submit" value="查找" />
 	 <input type="button" name="but" value="新增" onclick="add();"/>

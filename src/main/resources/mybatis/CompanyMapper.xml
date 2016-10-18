@@ -106,4 +106,8 @@
     </set>
     where ID = #{ID,jdbcType=VARCHAR}
   </update>
+  <select id="query"  resultMap="BaseResultMap" >
+    select * from COMPANY_INFO
+    where NAME like #{0} AND INDUSTRY LIKE #{1}
+  </select>
 </mapper>

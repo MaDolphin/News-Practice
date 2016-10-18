@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1277251247">
-    <data-source source="LOCAL" name="Oracle - @121.42.152.152 [2]" uuid="527f7a4c-a6ac-492c-bd96-5db461aac252">
-      <driver-ref>oracle</driver-ref>
-      <auto-commit>false</auto-commit>
-      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
-      <jdbc-url>jdbc:oracle:thin:@121.42.152.152:1521:xe</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="Oracle - @121.42.152.152" uuid="5d711edb-863d-4e14-a355-2d6b74412f43">
+  <component name="DataSourceManagerImpl" format="xml" hash="1437391500">
+    <data-source source="LOCAL" name="Oracle - @121.42.152.152" uuid="9839bfa0-0f27-4d36-baaa-8b78bc6b2c26">
       <driver-ref>oracle</driver-ref>
       <auto-commit>false</auto-commit>
       <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
