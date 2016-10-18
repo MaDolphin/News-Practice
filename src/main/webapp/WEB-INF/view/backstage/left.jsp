@@ -63,8 +63,8 @@ Class1 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>管理员帐号管理</
 insDoc(Class1, gLnk(1, '<a href=yhzhgl.jsp target=hsgmain alt=管理员帐号管理>管理员帐号管理</a>', '', '<%=path %>/images/editinfo.gif'));
 
 Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>站内新闻管理</DIV>', ''));
-insDoc(Class2, gLnk(1, '<a href=xinwentongzhi_list.jsp?lb=站内新闻 target=hsgmain alt=站内新闻查询>站内新闻管理</a>', '', '<%=path %>/images/editinfo.gif'));
-insDoc(Class2, gLnk(1, '<a href=xinwentongzhi_list.jsp?lb=站内新闻 target=hsgmain alt=站内新闻查询>头条新闻管理</a>', '', '<%=path %>/images/editinfo.gif'));
+insDoc(Class2, gLnk(1, '<a href=news_list target=hsgmain alt=站内新闻查询>站内新闻管理</a>', '', '<%=path %>/images/editinfo.gif'));
+<%--insDoc(Class2, gLnk(1, '<a href=xinwentongzhi_list.jsp?lb=站内新闻 target=hsgmain alt=站内新闻查询>头条新闻管理</a>', '', '<%=path %>/images/editinfo.gif'));--%>
 Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>注册用户管理</DIV>', ''));
 insDoc(Class2, gLnk(1, '<a href=gongsi_list target=hsgmain alt=公司管理>公司管理</a>', '', '<%=path %>/images/editinfo.gif'));
 Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>所有岗位管理</DIV>', ''));

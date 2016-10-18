@@ -177,6 +177,7 @@ public class SysController {
     public String add_form(Post post){
         post.setId(UUID.randomUUID().toString());
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
         post.setAddDate(sdf.format(new Date()));
         postDao.insertSelective(post);
         return "redirect:/gangwei_list";
@@ -222,7 +223,8 @@ public class SysController {
     }
 
     @RequestMapping("login")
-    public String login(){
+    public String login(Model model){
+
         return "backstage/login";
 
     }
