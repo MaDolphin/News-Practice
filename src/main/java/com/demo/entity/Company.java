@@ -5,9 +5,8 @@ import java.util.Date;
 public class Company {
     private String ID;
 
-    private String comID;
 
-    private String comNAME;
+
 
     private String NAME;
 
@@ -25,21 +24,6 @@ public class Company {
 
     private Date ADD_DATE;
 
-    public String getComID() {
-        return comID;
-    }
-
-    public void setComID(String comID) {
-        this.comID = comID;
-    }
-
-    public String getComNAME() {
-        return comNAME;
-    }
-
-    public void setComNAME(String comNAME) {
-        this.comNAME = comNAME;
-    }
 
     public String getID() {
         return ID;
