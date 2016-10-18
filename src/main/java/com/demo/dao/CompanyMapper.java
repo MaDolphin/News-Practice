@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
+import java.util.jar.Attributes;
 
 public interface CompanyMapper {
     @Delete({
@@ -62,4 +63,5 @@ public interface CompanyMapper {
         "where ID = #{ID,jdbcType=VARCHAR}"
     })
     int updateByPrimaryKey(Company record);
+    List<Company> query(String NAME,String INDUSTRY);
 }

@@ -55,7 +55,7 @@ public class SysController {
     }
 
     @RequestMapping("a")
-    public String a(){
+        public String a(){
             return "backstage/main";
 
     }
