@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 public interface NewsMapper {
     @Delete({
         "delete from NEWS_INFO",
@@ -35,6 +37,14 @@ public interface NewsMapper {
     @ResultMap("BaseResultMap")
     News selectByPrimaryKey(String ID);
 
+    @Select({
+            "select",
+            "*",
+            "from NEWS_INFO"
+    })
+    @ResultMap("BaseResultMap")
+    List<News> selectall();
+
     int updateByPrimaryKeySelective(News record);
 
     @Update({
@@ -48,4 +58,13 @@ public interface NewsMapper {
         "where ID = #{ID,jdbcType=VARCHAR}"
     })
     int updateByPrimaryKey(News record);
+
+    @Select({
+            "select",
+            "ID, TITLE, CONTENT, ADD_DATE, USER_ID, TYPOE, PHOTO",
+            "from NEWS_INFO",
+            "where TITLE like #{TITLE,jdbcType=VARCHAR}"
+    })
+    @ResultMap("BaseResultMap")
+    List<News> selectnews(News news);
 }
