@@ -90,6 +90,16 @@ public class SysController {
         return "backstage/mod";
     }
 
+    @RequestMapping("gangwei_detail")
+    public String gangwei_detail(Model model,String id){
+        Post post=postDao.selectByPrimaryKey(id);
+        List<Company> companies=companyDao.selectAll();
+        model.addAttribute("companies",companies);
+        model.addAttribute("gangwei",post);
+        return "backstage/gangwei_detail";
+
+    }
+
     @RequestMapping("gangwei_list")
     public String gangwei_list(Model model){
         List<Post> posts=postDao.selectAll();

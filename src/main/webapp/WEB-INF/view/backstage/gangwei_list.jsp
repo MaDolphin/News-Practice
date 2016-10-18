@@ -48,7 +48,7 @@ rel=stylesheet>
   <c:forEach items="${gangwei}" var="i">
       <tr>
           <td width="30" align="center">${i.id}</td>
-          <td><a href=""> ${i.company.NAME}</a></td>
+          <td><a href="/gangwei_detail?id=${i.id}"> ${i.company.NAME}</a></td>
           <td>${i.name}</td>
           <td>${i.demandNumber}</td>
           <td>${i.sex}</td>
