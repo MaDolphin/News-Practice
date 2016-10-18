@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -29,7 +30,7 @@ public class IndexController {
     private LinkMapper linkDao;
 
     @RequestMapping("/stageIndex")
-    public String stageIndex(Model model){
+    public String stageIndex(Model model,HttpSession session){
         List<News> newsList =newsDao.findAllNewsInfoTop();
         model.addAttribute("newsListTop",newsList);
         List<Company> companyList =companyDao.findAllCompanyInfoTop();
@@ -37,7 +38,7 @@ public class IndexController {
         List<Post> postList =postDao.findAllPostInfoTop();
         model.addAttribute("postListTop",postList);
         List<Link> linkList =linkDao.findAllLinkInfoTop();
-        model.addAttribute("linkListTop",linkList);
+        session.setAttribute("linkListTop",linkList);
         return "/stage/stageIndex";
     }
 }

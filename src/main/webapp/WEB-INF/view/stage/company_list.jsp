@@ -5,8 +5,8 @@
 
 <head>
     <title>最新公司</title>
-    <link href="/css/main.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="/css/main.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="/js/setHomeSetFav.js"></script>
     <script type="text/javascript" src="/js/jquery-1.4.4.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
