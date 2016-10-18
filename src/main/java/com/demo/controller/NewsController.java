@@ -24,9 +24,16 @@ public class NewsController {
 
     @RequestMapping("/stageIndex")
     public String stageIndex(Model model){
+        List<News> newsList =newsDao.findAllNewsInfoTop();
+        model.addAttribute("newsListTop",newsList);
+        return "/stage/stageIndex";
+    }
+
+    @RequestMapping("/news_list")
+    public String newsList(Model model){
         List<News> newsList =newsDao.findAllNewsInfo();
         model.addAttribute("newsList",newsList);
-        return "/stage/stageIndex";
+        return "/stage/news_list";
     }
 
 //    @RequestMapping("/post_info")

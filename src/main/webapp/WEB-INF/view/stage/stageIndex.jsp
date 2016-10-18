@@ -1,16 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: xfcq
-  Date: 2016/10/12
-  Time: 15:32
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>企业网站实例</title>
+    <title>企业网站</title>
     <link href="/css/main.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="/js/setHomeSetFav.js"></script>
     <script type="text/javascript" src="/js/myfocus-2.0.1.min.js" charset="utf-8"></script><!--引入myFocus库-->
@@ -28,21 +21,16 @@
 </head>
 
 <body>
-<div class="top">
-    <div class="top_content">
-        <ul>
-            <li><a href="#">联系我们</a></li>
-            <li><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a></li>
-            <li><a onclick="SetHome(window.location)" href="javascript:void(0)">设为首页</a></li>
-        </ul>
-    </div>
-</div>
+<%@ include file="header.jsp" %>
 <!--页面顶端top结束-->
 
 <div class="wrap">
     <div  class="logo">
         <div class="logo_left"></div>
-        <div class="logo_right"><img src="/images/tel.jpg" width="28" height="28" />24小时服务热线：<span class="tel">123-456-7890</span></div>
+        <div class="logo_right">
+            <img src="/images/tel.jpg" width="28" height="28" />
+            24小时服务热线：<span class="tel">123-456-7890</span>
+        </div>
     </div>
     <!--logo结束-->
 
@@ -51,20 +39,15 @@
         <div class="nav_mid">
             <div class="nav_mid_left">
                 <ul>
-                    <li><a href="#">首页</a></li>
-                    <li><a href="list.html">关于我们</a></li>
-                    <li><a href="news.html">新闻动态</a></li>
-                    <li><a href="list.html">最新公司</a></li>
-                    <li><a href="list.html">最新岗位</a></li>
-                    <li><a href="list.html">用户留言</a></li>
+                    <li><a href="/news/stageIndex">首页</a></li>
+                    <li><a href="/news/news_list">新闻动态</a></li>
+                    <li><a href="/news/company_list">最新公司</a></li>
+                    <li><a href="/news/post_list">最新岗位</a></li>
+                    <li><a href="/news/about">关于我们</a></li>
                 </ul>
             </div>
             <!--nav_mid_left结束-->
-            <div class="nav_mid_right">
-                <form action="" method="post">
-                    <!--<input type="text" class="search_text" x-webkit-speech />-->
-                </form>
-            </div>
+            <div class="nav_mid_right"></div>
             <!--nav_mid_right结束-->
         </div>
         <!--导航主体nav_mid结束-->
@@ -91,19 +74,18 @@
     <div class="main">
         <div class="news">
             <div class="title">
-                <h2 class="titile_left">新闻中心</h2>
-                <span class="title_right"><a href="#">More&gt;&gt;</a></span> </div>
-            <!--title结束--><!--pic_news结束-->
-
+                <h2 class="title_left">新闻动态</h2>
+                <span class="title_right"><a href="/news/news_list">More&gt;&gt;</a></span>
+            </div>
+            <!--title结束-->
             <div class="news_list">
                 <ul>
-                    <c:forEach var="news" items="${newsList}">
+                    <c:forEach var="news" items="${newsListTop}">
                         <li>
-                            <span><fmt:formatDate value="${news.ADD_DATE}" pattern="yyyy-MM-dd" type="date" dateStyle="long" /></span>
                             <a href="/news/search_news_info?ID=${news.ID}">${news.TITLE}</a>
+                            <span><fmt:formatDate value="${news.ADD_DATE}" pattern="yyyy-MM-dd" type="date" dateStyle="long" /></span>
                         </li>
                     </c:forEach>
-
                 </ul>
             </div>
             <!--news_list结束-->
@@ -113,10 +95,10 @@
 
         <div class="news">
             <div class="title">
-                <h2 class="titile_left">最新公司</h2>
-                <span class="title_right"><a href="#">More&gt;&gt;</a></span> </div>
-            <!--title结束--><!--pic_news结束-->
-
+                <h2 class="title_left">最新公司</h2>
+                <span class="title_right"><a href="#">More&gt;&gt;</a></span>
+            </div>
+            <!--title结束-->
             <div class="news_list">
                 <ul>
                     <li><span>2014-06-01</span> <a href="news_detail.html">【 用户篇】“有为屌丝”在路上</a></li>
@@ -126,7 +108,6 @@
                 </ul>
             </div>
             <!--news_list结束-->
-
         </div>
         <!--news结束-->
 
@@ -145,18 +126,13 @@
                 </ul>
             </div>
             <!--news_list结束-->
-
         </div>
         <!--news结束-->
-
     </div>
     <!--main结束-->
 </div>
-<!--最外层wrap结束  --><!--copyright_content结束-->
-</div>
-<div class="copyright">
-    友情连接 友情连接 友情连接 友情连接
-</div>
+<!--最外层wrap结束  -->
+<%@ include file="footer.jsp" %>
 </body>
 </html>
 

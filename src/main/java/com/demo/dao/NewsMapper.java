@@ -60,6 +60,14 @@ public interface NewsMapper {
     @ResultMap("BaseResultMap")
     List<News> findAllNewsInfo();
 
+    @Select({
+            "select",
+            "*",
+            "from NEWS_INFO where rownum<=5"
+    })
+    @ResultMap("BaseResultMap")
+    List<News> findAllNewsInfoTop();
+
     News searchNewsInfo(String ID);
 
 }
