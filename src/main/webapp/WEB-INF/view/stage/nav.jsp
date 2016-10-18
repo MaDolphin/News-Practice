@@ -28,9 +28,9 @@
         <div class="nav_mid_left">
             <ul>
                 <li><a href="/news/stageIndex">首页</a></li>
-                <li><a href="/news/news_list">新闻动态</a></li>
-                <li><a href="/news/company_list">最新公司</a></li>
-                <li><a href="/news/post_list">最新岗位</a></li>
+                <li><a href="/news/news_list?page=1&count=10">新闻动态</a></li>
+                <li><a href="/company/company_list?page=1&count=10">最新公司</a></li>
+                <li><a href="/news/post_list?page=1&count=10">最新岗位</a></li>
                 <li><a href="/news/about">关于我们</a></li>
             </ul>
         </div>

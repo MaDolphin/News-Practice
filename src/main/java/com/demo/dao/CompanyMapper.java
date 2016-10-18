@@ -8,6 +8,8 @@ import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 public interface CompanyMapper {
     @Delete({
         "delete from COMPANY_INFO",
@@ -53,4 +55,24 @@ public interface CompanyMapper {
         "where ID = #{ID,jdbcType=VARCHAR}"
     })
     int updateByPrimaryKey(Company record);
+
+    @Select({
+            "select",
+            "*",
+            "from COMPANY_INFO"
+    })
+    @ResultMap("BaseResultMap")
+    List<Company> findAllCompanyInfo(PageBounds pageBounds);
+
+    @Select({
+            "select",
+            "*",
+            "from COMPANY_INFO where rownum<=5"
+    })
+    @ResultMap("BaseResultMap")
+    List<Company> findAllCompanyInfoTop();
+
+    Company searchCompanyInfo(String ID);
+
+    int searchCompanyTotalCount();
 }

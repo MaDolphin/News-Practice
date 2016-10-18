@@ -2,6 +2,7 @@ package com.demo.dao;
 
 import com.demo.entity.News;
 import com.demo.entity.Post;
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
@@ -58,7 +59,7 @@ public interface NewsMapper {
             "from NEWS_INFO"
     })
     @ResultMap("BaseResultMap")
-    List<News> findAllNewsInfo();
+    List<News> findAllNewsInfo(PageBounds pageBounds);
 
     @Select({
             "select",
@@ -69,5 +70,7 @@ public interface NewsMapper {
     List<News> findAllNewsInfoTop();
 
     News searchNewsInfo(String ID);
+
+    int searchNewsTotalCount();
 
 }

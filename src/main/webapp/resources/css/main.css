@@ -290,29 +290,6 @@ body {
 	float: right;
 	background-color: #FFF;
 }
-.page
-{
-	height:40px;
-	margin-top:10px;
-	text-align:center;
-}
-.page a
-{
-	display:inline-block;
-	border: 1px solid #E8E8E8;
-    text-decoration:none;
-	margin:5px;
-	padding:5px 10px;;
-	}
-.page a:link,.page a:visited
-{
-	color:#000;
-}
-.page a:hover,.page a:active
-{
-	color:#FFF;
-	background-color:#cc1b1b;
-}
 
 .n_main_left, .n_main_right {
 	min-height: 320px;
@@ -433,7 +410,6 @@ body {
 	background:url(../images/list.jpg) no-repeat;
 	padding-left:10px;
 	padding-right:5px;
-	border-bottom:1px dotted #CCCCCC;
 	line-height:30px;
 	height:30px;
 	margin-left:5px;
@@ -492,7 +468,7 @@ body {
 }
 .news_list_left{
 	width:256px;
-	height:350px;
+	min-height:350px;
 	float:left;
 	border:1px solid #CCC;
 	background-color: white;
@@ -512,7 +488,6 @@ body {
 	list-style:none;
 	padding-left:10px;
 	padding-right:5px;
-	border-bottom:1px dotted #CCCCCC;
 	line-height:30px;
 	height:30px;
 	margin-left:5px;
@@ -523,15 +498,16 @@ body {
 }
 .page{
 	text-align:center;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 	position:absolute;
 	left: 50%;
 	bottom:0;
-	-webkit-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%);
 }
 .page a{
 	text-decoration:none;
-	border:1px solid #999;
+	font-size: 15px;
+	border:0px solid #999;
 	margin:0 5px;
 	padding:5px;
 }
@@ -590,4 +566,9 @@ body {
 	padding:20px;
 	line-height:20px;
 	text-indent:2em;
+}
+
+.company_content{
+	padding:20px;
+	line-height:20px;
 }

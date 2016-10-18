@@ -17,16 +17,9 @@
     <%@ include file="nav.jsp" %>
 
     <div class="news_list_wrap">
-        <div class="news_list_left">
-            <div class="left_title">
-                <h2>新闻动态</h2>
-            </div>
-            <ul style="margin-left: 10px" >
-                <li><a href="/news/news_list">新闻动态</a></li>
-                <li><a href="/news/company_list">公司信息</a></li>
-                <li><a href="/news/post_list">岗位信息</a></li>
-            </ul>
-        </div>
+
+        <%@ include file="wrapLeft.jsp" %>
+
         <div class="news_list_right">
             <div class="news_list_title">
                 <h2>新闻动态</h2>
@@ -39,10 +32,6 @@
             </p>
             <div class="news_content">
                 ${newsDetail.CONTENT}
-            </div>
-
-
-            <div class="page">
             </div>
 
         </div>

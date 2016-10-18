@@ -28,6 +28,10 @@
     WHERE news.ID = #{0}
   </select>
 
+  <select id="searchNewsTotalCount" resultType="int">
+    SELECT COUNT(*) FROM NEWS_INFO
+  </select>
+
 
   <insert id="insertSelective" parameterType="com.demo.entity.News" >
     insert into NEWS_INFO

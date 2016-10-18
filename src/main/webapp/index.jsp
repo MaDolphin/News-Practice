@@ -13,7 +13,7 @@
 <body>
 
 <script language="JavaScript">
-    window.location.href = "/news/stageIndex";
+    window.location.href = "/index/stageIndex";
 </script>
 
 </body>

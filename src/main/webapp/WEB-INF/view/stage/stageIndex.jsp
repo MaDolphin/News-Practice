@@ -20,7 +20,7 @@
         <div class="news">
             <div class="title">
                 <h2 class="title_left">新闻动态</h2>
-                <span class="title_right"><a href="/news/news_list">More&gt;&gt;</a></span>
+                <span class="title_right"><a href="/news/news_list?page=1&count=10">More&gt;&gt;</a></span>
             </div>
             <!--title结束-->
             <div class="news_list">
@@ -34,22 +34,23 @@
                 </ul>
             </div>
             <!--news_list结束-->
-
         </div>
         <!--news结束-->
 
         <div class="news">
             <div class="title">
                 <h2 class="title_left">最新公司</h2>
-                <span class="title_right"><a href="#">More&gt;&gt;</a></span>
+                <span class="title_right"><a href="/company/company_list?page=1&count=10">More&gt;&gt;</a></span>
             </div>
             <!--title结束-->
             <div class="news_list">
                 <ul>
-                    <li><span>2014-06-01</span> <a href="news_detail.html">【 用户篇】“有为屌丝”在路上</a></li>
-                    <li><span>2014-06-01</span><a href="news.html">【有奖活动】给父亲的三行书信</a></li>
-                    <li><span>2014-05-30</span><a href="news.html">《程序猿，请晒出你的童年》活动获奖公告</a></li>
-                    <li><span>2014-05-28</span><a href="news.html" title="aa">破茧成蝶——美女程序员的蜕变史</a></li>
+                    <c:forEach var="company" items="${companyListTop}">
+                        <li>
+                            <a href="/company/search_company_info?ID=${company.ID}">${company.NAME}</a>
+                            <span><fmt:formatDate value="${company.ADD_DATE}" pattern="yyyy-MM-dd" type="date" dateStyle="long" /></span>
+                        </li>
+                    </c:forEach>
                 </ul>
             </div>
             <!--news_list结束-->
