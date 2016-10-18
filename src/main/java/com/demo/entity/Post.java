@@ -21,6 +21,16 @@ public class Post {
 
     private String addDate;
 
+    private Company company;
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
     public String getId() {
         return id;
     }

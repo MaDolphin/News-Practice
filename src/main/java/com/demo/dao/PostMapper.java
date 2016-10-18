@@ -1,6 +1,8 @@
 package com.demo.dao;
 
+import com.demo.entity.Company;
 import com.demo.entity.Post;
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -68,13 +70,13 @@ public interface PostMapper {
     })
     int updateByPrimaryKey(Post record);
 
-    @Select({
+/*    @Select({
             "select",
             "*",
             "from POST_INFO"
     })
     @ResultMap("BaseResultMap")
-    List<Post> findAllPostInfo();
+    List<Post> findAllPostInfo();*/
 
    /* @Select({
             "select",
@@ -83,4 +85,24 @@ public interface PostMapper {
     })
     @ResultMap("BaseResultMap")*/
     List<Post> searchPostInfo(@Param(value = "id") String id,@Param(value = "name") String name);
+
+    @Select({
+            "select",
+            "*",
+            "from POST_INFO"
+    })
+    @ResultMap("BaseResultMap")
+    List<Post> findAllPostInfo(PageBounds pageBounds);
+
+    @Select({
+            "select",
+            "*",
+            "from POST_INFO where rownum<=5"
+    })
+    @ResultMap("BaseResultMap")
+    List<Post> findAllPostInfoTop();
+
+    Post searchPostInfo(String ID);
+
+    int searchPostTotalCount();
 }

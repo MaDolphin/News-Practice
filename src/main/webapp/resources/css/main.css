@@ -452,7 +452,7 @@ body {
 .footer_content li {
 	float:left;
 	list-style-image: url(../images/arrow.jpg);
-	width: 70px;
+	width: 100px;
 }
 .footer_content a:link, .footer_content a:visited {
 	color: #8E8E8E;
