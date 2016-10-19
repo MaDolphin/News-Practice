@@ -1,6 +1,7 @@
 package com.demo.dao;
 
 import com.demo.entity.Company;
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
@@ -63,5 +64,25 @@ public interface CompanyMapper {
         "where ID = #{ID,jdbcType=VARCHAR}"
     })
     int updateByPrimaryKey(Company record);
+
+    @Select({
+            "select",
+            "*",
+            "from COMPANY_INFO"
+    })
+    @ResultMap("BaseResultMap")
+    List<Company> findAllCompanyInfo(PageBounds pageBounds);
+
+    @Select({
+            "select",
+            "*",
+            "from COMPANY_INFO where rownum<=5"
+    })
+    @ResultMap("BaseResultMap")
+    List<Company> findAllCompanyInfoTop();
+
+    Company searchCompanyInfo(String ID);
+
+    int searchCompanyTotalCount();
     List<Company> query(String NAME,String INDUSTRY);
 }

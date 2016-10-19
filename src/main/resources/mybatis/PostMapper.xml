@@ -28,6 +28,30 @@
     ID, COMPANY_ID, NAME, DEMAND_NUMBER, SEX, EDUCATION, SALARY, WORKPLACE, DESCRIPTION, 
     ADD_DATE
   </sql>
+
+  <select id="searchPostInfo"  resultMap="BaseResultMap" >
+    SELECT post.*,com.NAME as COMNAME FROM POST_INFO post
+    INNER JOIN COMPANY_INFO com ON post.COMPANY_ID = com.ID
+    WHERE post.ID = #{0}
+  </select>
+
+  <select id="searchPostTotalCount" resultType="int">
+    SELECT COUNT(*) FROM POST_INFO
+  </select>
+
+<!--  <select id="searchPostInfo" resultMap="BaseResultMap">
+    SELECT * FROM POST_INFO
+      <where>
+        <if test="id!=null">
+          ID LIKE #{id}
+        </if>
+        <if test="name!=null">
+          and NAME LIKE #{name}
+
+        </if>
+
+      </where>
+  </select>-->
   <insert id="insertSelective" parameterType="com.demo.entity.Post" >
     insert into POST_INFO
     <trim prefix="(" suffix=")" suffixOverrides="," >

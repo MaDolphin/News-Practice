@@ -15,6 +15,16 @@
   <sql id="Base_Column_List" >
     ID, NAME, FUNDS, TEL, ADDRESS, SCALE, INDUSTRY, DESCRIPTION, ADD_DATE
   </sql>
+
+  <select id="searchCompanyInfo"  resultMap="BaseResultMap" >
+    SELECT * FROM COMPANY_INFO com
+    WHERE com.ID = #{0}
+  </select>
+
+  <select id="searchCompanyTotalCount" resultType="int">
+    SELECT COUNT(*) FROM COMPANY_INFO
+  </select>
+
   <insert id="insertSelective" parameterType="com.demo.entity.Company" >
     insert into COMPANY_INFO
     <trim prefix="(" suffix=")" suffixOverrides="," >

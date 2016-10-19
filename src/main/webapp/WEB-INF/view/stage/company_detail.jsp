@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>新闻动态</title>
+    <title>最新公司</title>
     <link href="/css/main.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="/js/setHomeSetFav.js"></script>
 </head>
@@ -22,16 +22,18 @@
 
         <div class="news_list_right">
             <div class="news_list_title">
-                <h2>新闻动态</h2>
+                <h2>最新公司</h2>
             </div>
-            <h1 style="line-height: 40px;">${newsDetail.TITLE}</h1>
+            <h1 style="line-height: 40px;">${companyDetail.NAME}</h1>
             <p class="news_info">
-                日期：<fmt:formatDate value="${newsDetail.ADD_DATE}" pattern="yyyy-MM-dd" type="date" dateStyle="long" />
-                &nbsp;
-                来源:${newsDetail.USER.username}
+                日期：<fmt:formatDate value="${companyDetail.ADD_DATE}" pattern="yyyy-MM-dd" type="date" dateStyle="long" />
             </p>
-            <div class="news_content">
-                ${newsDetail.CONTENT}
+            <div class="company_content">
+                ◆ 联系方式：${companyDetail.TEL}<br>
+                ◆ 公司地址：${companyDetail.ADDRESS}<br>
+                ◆ 公司规模：${companyDetail.SCALE}<br>
+                ◆ 所属行业：${companyDetail.INDUSTRY}<br>
+                ◆ 公司介绍：${companyDetail.DESCRIPTION}<br>
             </div>
 
         </div>

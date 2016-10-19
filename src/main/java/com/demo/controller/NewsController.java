@@ -1,87 +1,58 @@
 package com.demo.controller;
 
 import com.demo.dao.NewsMapper;
-import com.demo.entity.*;
+import com.demo.entity.News;
+import com.demo.entity.Post;
+import com.github.miemiedev.mybatis.paginator.domain.Order;
+import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.annotation.Resource;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 /**
- * Created by xia on 2016/10/18.
+ * Created by xfcq on 2016/10/13.
  */
 @Controller
-@RequestMapping("/")
-@SessionAttributes("user")
+@RequestMapping(value="/news")
 public class NewsController {
+    int totalCount = 0;
+    int pageCount = 0;
     @Resource
-    NewsMapper newsdao;
+    private NewsMapper newsDao;
 
-    @RequestMapping("news_list")
-    public String news_list(Model model){
-        List<News> news=newsdao.selectall();
-        model.addAttribute("a",news);
-        return "backstage/news_list";
+    @RequestMapping("/news_list")
+    public String newsList(Model model,int page,int count){
+        PageBounds pageBounds=new PageBounds(page,count);
+        List<News> newsList =newsDao.findAllNewsInfo(pageBounds);
+        totalCount = newsDao.searchNewsTotalCount();
+
+        if(totalCount % count == 0){
+            pageCount = totalCount/count;
+        }else{
+            pageCount = totalCount/count+1;
+        }
+
+        model.addAttribute("pageCount",pageCount);
+        model.addAttribute("newsList",newsList);
+        model.addAttribute("titleName","新闻动态");
+        model.addAttribute("currentPage",page);
+        return "/stage/news_list";
     }
 
-    @RequestMapping("news_addview")
-    public String news_addview() {
-    return "backstage/news_addview";
+    @RequestMapping("/search_news_info")
+    public String searchNewsInfo(String ID,Model model){
+        News news =newsDao.searchNewsInfo(ID);
+        model.addAttribute("titleName","新闻动态");
+        model.addAttribute("newsDetail",news);
+        return "/stage/news_detail";
     }
 
-    @RequestMapping("news_add")
-    public String news_add(@ModelAttribute User user, News news){
-
-       news.setID(UUID.randomUUID().toString());
-        news.setUSER_ID(user.getId());
-        news.setPHOTO("9");
-        news.setTYPOE("9");
-        news.setADD_DATE(new Date());
-       newsdao.insertSelective(news);
-        return "redirect:/news_list";
-    }
-
-    @RequestMapping("news_updtview")
-    public String news_updtview(Model model,String id){
-        News news=newsdao.selectByPrimaryKey(id);
-        model.addAttribute("news",news);
-        return "backstage/news_updtview";
-    }
-    @RequestMapping("news_updt")
-    public String news_updt(News news){
-        news.setADD_DATE(new Date());
-        newsdao.updateByPrimaryKeySelective(news);
-        return "redirect:/news_list";
-    }
-
-    @RequestMapping("news_dele")
-    public String news_dele(String id) {
-        newsdao.deleteByPrimaryKey(id);
-        return "redirect:/news_list";
-    }
-    @RequestMapping("news_detail")
-    public String news_detail(String id ,Model model) {
-
-        model.addAttribute("news", newsdao.selectByPrimaryKey(id));
-        return "backstage/news_detailview";
-    }
-
-    @RequestMapping("query_news")
-    public String query_news(String TITLE, Model model){
-       News news=new News();
-        news.setTITLE("%"+TITLE+"%");
-        System.out.println(news.getTITLE());
-        List<News> a=newsdao.selectnews(news);
-        model.addAttribute("a",a);
-        return "backstage/news_list";
-
+    @RequestMapping("/about")
+    public String aboutInfo(){
+        return "/stage/about";
     }
 }

@@ -12,5 +12,9 @@
 </head>
 <body>
 
+<script language="JavaScript">
+    window.location.href = "/index/stageIndex";
+</script>
+
 </body>
 </html>

@@ -9,10 +9,30 @@
     <result column="USER_ID" property="USER_ID" jdbcType="VARCHAR" />
     <result column="TYPOE" property="TYPOE" jdbcType="CHAR" />
     <result column="PHOTO" property="PHOTO" jdbcType="VARCHAR" />
+
+    <association property="USER" javaType="com.demo.entity.User">
+      <id column="ID" property="id" jdbcType="VARCHAR" />
+      <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+      <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+      <result column="STATUS" property="status" jdbcType="CHAR" />
+      <result column="ADD_DATE" property="addDate" jdbcType="TIMESTAMP" />
+    </association>
   </resultMap>
   <sql id="Base_Column_List" >
     ID, TITLE, CONTENT, ADD_DATE, USER_ID, TYPOE, PHOTO
   </sql>
+
+  <select id="searchNewsInfo"  resultMap="BaseResultMap" >
+    SELECT * FROM NEWS_INFO news
+    INNER JOIN USER_INFO users ON news.USER_ID = users.ID
+    WHERE news.ID = #{0}
+  </select>
+
+  <select id="searchNewsTotalCount" resultType="int">
+    SELECT COUNT(*) FROM NEWS_INFO
+  </select>
+
+
   <insert id="insertSelective" parameterType="com.demo.entity.News" >
     insert into NEWS_INFO
     <trim prefix="(" suffix=")" suffixOverrides="," >
