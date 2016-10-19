@@ -1,11 +1,14 @@
 package com.demo.dao;
 
 import com.demo.entity.User;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+
+import java.util.List;
 
 public interface UserMapper {
     @Delete({
@@ -31,7 +34,25 @@ public interface UserMapper {
         "where ID = #{id,jdbcType=VARCHAR}"
     })
     @ResultMap("BaseResultMap")
+
     User selectByPrimaryKey(String id);
+
+    @Select({
+            "select * from USER_INFO where username like #{username,jdbcType=VARCHAR}"
+
+    })
+    @ResultMap("BaseResultMap")
+    List<User> selectByPrimaryKey2(String username);
+
+
+    @Select({
+            "select * from USER_INFO "
+    })
+    @ResultMap("BaseResultMap")
+    List<User> selectAllSimple();
+
+
+
 
     @Select({
           "select * from USER_INFO where username=#{0} and password=#{1} and status=1"
@@ -50,4 +71,12 @@ public interface UserMapper {
         "where ID = #{id,jdbcType=VARCHAR}"
     })
     int updateByPrimaryKey(User record);
+
+    @Update({
+            "update USER_INFO",
+            "set USERNAME = #{1},",
+            "PASSWORD = #{2}",
+            "where ID = #{0}"
+    })
+    int updateByPrimaryKey2(String id,String username,String password);
 }

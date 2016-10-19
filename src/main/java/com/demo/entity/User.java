@@ -3,15 +3,15 @@ package com.demo.entity;
 import java.util.Date;
 
 public class User {
-    private String id;
+    private String id;//
 
     private String username;
 
     private String password;
 
-    private String status;
+    private String status;//状态
 
-    private Date addDate;
+    private Date addDate;//添加时间
 
     public String getId() {
         return id;

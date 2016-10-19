@@ -60,7 +60,7 @@ function addqkOpen(BcgID)
 foldersTree = gFldr('<DIV CLASS=fldrroot><b>系统功能列表</b></DIV>','');
 
 Class1 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>管理员帐号管理</DIV>', ''));
-insDoc(Class1, gLnk(1, '<a href=yhzhgl.jsp target=hsgmain alt=管理员帐号管理>管理员帐号管理</a>', '', '<%=path %>/images/editinfo.gif'));
+insDoc(Class1, gLnk(1, '<a href=managermain target=hsgmain alt=管理员帐号管理>管理员帐号管理</a>', '', '<%=path %>/images/editinfo.gif'));
 
 Class2 = insFldr(foldersTree, gFldr('<DIV CLASS=fldrroot>站内新闻管理</DIV>', ''));
 insDoc(Class2, gLnk(1, '<a href=news_list target=hsgmain alt=站内新闻查询>站内新闻管理</a>', '', '<%=path %>/images/editinfo.gif'));
