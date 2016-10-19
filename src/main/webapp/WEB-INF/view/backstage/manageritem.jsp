@@ -16,6 +16,7 @@
     <script src="/js/jquery-1.4.4.min.js"></script>
     <script>
         $(function(){
+            $("#status").val('${manageritem.status}');
             var c=$("#status").value;
           if(c=="edit"){
 
@@ -104,7 +105,7 @@
         <tr>
             <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">状态</td>
             <td align="left" valign="middle" bgcolor="#F9FCFF">
-                <select name="status" id="status" value="${manageritem.status}" disabled>
+                <select name="status" id="status"  disabled>
                     <option value="0">0</option>
                     <option value="1">1</option>
 
@@ -139,4 +140,5 @@
         <input type="text" value="${status}" id="status"/>
     </div>
 </body>
+
 </html>

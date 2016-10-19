@@ -4,9 +4,7 @@
     <root id="archive" name="skeleton.war">
       <element id="artifact" artifact-name="demo:war exploded" />
       <element id="directory" name="WEB-INF">
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="ojdbc6" />
-        </element>
+        <element id="directory" name="lib" />
       </element>
     </root>
   </artifact>
