@@ -68,7 +68,6 @@ public class CpyController {
     @RequestMapping("gongsi_dele")
     public String gongsi_dele(String id){
         companyDao.deleteByPrimaryKey(id);
-
         return "redirect:/gongsi_list";
 
     }

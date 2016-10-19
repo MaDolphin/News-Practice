@@ -35,7 +35,7 @@
         <tr>
             <td height="25" align="center" valign="middle" bgcolor="#F9FCFF">内容</td>
             <td align="left" valign="middle" bgcolor="#F9FCFF">
-                <textarea name="CONTENT" rows="10" cols="60" required >${news.CONTENT}"</textarea>
+                <textarea name="CONTENT" rows="10" cols="60" required >${news.CONTENT}</textarea>
             </td>
         </tr>
     </table>
